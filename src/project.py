@@ -39,6 +39,11 @@ def create_deck():
     Returns: 
     - deck: list of remaining cards
     """
+    # Define suits and numbers
+    # For each suit and for each value: create a card and add it to deck
+
+    
+
     pass
 
 def deal_card(deck):
