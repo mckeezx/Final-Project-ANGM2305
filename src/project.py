@@ -54,7 +54,8 @@ def create_deck():
     for card in deck:
         print(f"{card[0]} of {card[1]}") # debugging
 
-    pass
+    return deck
+
 
 def deal_card(deck):
     """
@@ -157,7 +158,7 @@ def play_round(deck, money):
     pass
 
 def main():
-    pass
+    deck = create_deck()
 
 if __name__ == "__main__":
     main()
