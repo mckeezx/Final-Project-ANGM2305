@@ -106,6 +106,16 @@ def check_blackjack(hand):
     # If hand size is 2, check for a blackjack
     # check hand for Ace and a 10 value card (10, Jack, Queen, King)
     # If both exist, return True, else return False
+    # Use any to see if any cards in the list are 10, J, Q, K
+
+    if len(hand) != 2:
+        return False
+
+    values = [card[0] for card in hand]
+
+    if "Ace" in values and any(card_value in values for card_value in ["10", "Jack", "Queen", "King"]):
+        return True
+    return False
 
 def display_hand():
     """
@@ -185,6 +195,9 @@ def main():
     # Deal dealer 2 cards
     dealer_hand.append(deal_card(deck))
     dealer_hand.append(deal_card(deck))
+
+    print(player_hand) # debugging
+    print(dealer_hand) # debugging
 
 if __name__ == "__main__":
     main()
