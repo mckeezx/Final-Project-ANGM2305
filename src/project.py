@@ -1,3 +1,6 @@
+Import random
+
+
 # Game Loop 
 # Player starts with $100 
 # If money is more than $0 and less than $300 play a round (Core)
@@ -67,6 +70,10 @@ def deal_card(deck):
     Returns:
     - card: the card drawn from the deck
     """
+    # take random card from deck
+    # remove it from deck
+    # return it 
+
     pass
 
 def calc_score():
