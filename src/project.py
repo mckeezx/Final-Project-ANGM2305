@@ -89,6 +89,8 @@ def calc_score():
     Returns:
     - int: total score, accounting for ace cards
     """
+
+
     pass
 
 def check_blackjack(hand):
@@ -168,7 +170,19 @@ def play_round(deck, money):
     pass
 
 def main():
+    # Create the deck of cards
     deck = create_deck()
+    # Create hands
+    player_hand = []
+    dealer_hand = []
+
+    # Deal player 2 cards
+    player_hand.append(deal_card(deck))
+    player_hand.append(deal_card(deck))
+
+    # Deal dealer 2 cards
+    dealer_hand.append(deal_card(deck))
+    dealer_hand.append(deal_card(deck))
 
 if __name__ == "__main__":
     main()
