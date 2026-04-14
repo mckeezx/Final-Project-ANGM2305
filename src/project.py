@@ -33,30 +33,112 @@
 # ELSE push/tie
 
 def create_deck():
+    """
+    Creates list of a deck of cards. 
+
+    Returns: 
+    - deck: list of remaining cards
+    """
     pass
 
-def deal_card():
+def deal_card(deck):
+    """
+    Removes and returns one card from the deck.
+
+    Inputs: 
+    - deck: list of remaining cards
+
+    Returns:
+    - card: the card drawn from the deck
+    """
     pass
 
 def calc_score():
+    """
+    Calculates total value of the hand. 
+
+    Inputs:
+    - hand: list of cards
+
+    Returns:
+    - int: total score, accounting for ace cards
+    """
     pass
 
 def check_blackjack(hand):
+    """
+    Checks if the player has a natural blackjack.
+
+    Inputs: 
+    - hand: list of cards
+
+    Returns: 
+    - Bool: True if blackjack, else False
+    """
     pass
 
 def display_hand():
+    """
+    UI to display and print the hand.
+
+    Inputs:
+    - hand: list of cards
+
+    Returns:
+    - None (prints hand to console)
+    """
     pass
 
 def player_turn(deck, hand):
+    """
+    Handles player's actions during their turn.
+
+    Inputs:
+    - deck: list of remaining cards
+    - hand: current player hand
+
+    Returns: 
+    - hand: final player hand after hitting or standing
+    """
     pass
 
 def dealer_turn(deck, hand):
+    """
+    Logic to decide dealer's action.
+
+    Inputs: 
+    - hand: current dealer hand
+    - deck: list of remaining cards
+
+    Returns:
+    - draws card if score < 17
+    - else, stand
+    """
     pass
 
 def compare_hands(player, dealer):
+    """
+    Compare the player's hand to dealer's. 
+    
+    Inputs: 
+    - player: player's hand
+    - dealer: dealer's hand
+
+    Returns: 
+    win, lose, push
+    """
     pass
 
 def play_round(deck, money):
+    """ 
+    Plays a round of Vegas Strip Blackjack.
+
+    Input: 
+    - Money: player's current money
+
+    Returns: 
+    - Updates money (int)
+    """
     pass
 
 def main():
