@@ -1,4 +1,4 @@
-Import random
+import random
 
 
 # Game Loop 
