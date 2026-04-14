@@ -74,7 +74,10 @@ def deal_card(deck):
     # remove it from deck
     # return it 
 
-    pass
+    card = random.choice(deck)
+    deck.remove(card)
+    return card
+
 
 def calc_score():
     """
