@@ -32,4 +32,36 @@
 # ELIF player < dealer then lsoe
 # ELSE push/tie
 
+def create_deck():
+    pass
+
+def deal_card():
+    pass
+
+def calc_score():
+    pass
+
+def check_blackjack(hand):
+    pass
+
+def display_hand():
+    pass
+
+def player_turn(deck, hand):
+    pass
+
+def dealer_turn(deck, hand):
+    pass
+
+def compare_hands(player, dealer):
+    pass
+
+def play_round(deck, money):
+    pass
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
 
