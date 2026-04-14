@@ -42,7 +42,17 @@ def create_deck():
     # Define suits and numbers
     # For each suit and for each value: create a card and add it to deck
 
+    deck = []
+    suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
+    values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
+
+    for suit in suits:
+        for value in values:
+            card = (value, suit)
+            deck.append(card)
     
+    for card in deck:
+        print(f"{card[0]} of {card[1]}") # debugging
 
     pass
 
