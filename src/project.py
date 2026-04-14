@@ -103,7 +103,9 @@ def check_blackjack(hand):
     Returns: 
     - Bool: True if blackjack, else False
     """
-    pass
+    # If hand size is 2, check for a blackjack
+    # check hand for Ace and a 10 value card (10, Jack, Queen, King)
+    # If both exist, return True, else return False
 
 def display_hand():
     """
