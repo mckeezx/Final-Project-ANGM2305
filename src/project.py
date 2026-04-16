@@ -106,20 +106,21 @@ def calc_score():
         # elif it's an ace, add 11 to the score and 1 to the ace count
         elif == "Ace":
             score += 11
-            aces += 1
+            ace += 1
         
         # else if it's a number card just add the integer value to score
         else:
             score += int(value)
 
 
-
     # while score is greater than 21 and ace count more than 0 
     # subtract 10 from score and 1 from ace count
+    while score > 21 and aces > 0:
+        score -= 10
+        ace -= 1
 
     # return score
-
-    pass
+    return score
 
 def check_blackjack(hand):
     """
