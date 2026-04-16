@@ -166,6 +166,20 @@ def player_turn(deck, hand):
     Returns: 
     - hand: final player hand after hitting or standing
     """
+    # loop while player is playing
+
+        # show player their hand
+        # show player score
+
+        # ask them to hit or stand
+
+        # if hit, deal a card and calculate score again
+
+        # if score > 21, bust and break loop
+
+        # if stand, end turn and break loop
+
+    
     pass
 
 def dealer_turn(deck, hand):
