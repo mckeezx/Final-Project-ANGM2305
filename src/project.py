@@ -167,6 +167,10 @@ def player_turn(deck, hand):
     - hand: final player hand after hitting or standing
     """
     # loop while player is playing
+    while True:
+        print("\nYour Hand:", hand)
+        score = calc_score(hand)
+        print("Your Score:", score)
 
         # show player their hand
         # show player score
