@@ -228,6 +228,10 @@ def main():
     print(player_hand) # debugging
     print(dealer_hand) # debugging
 
+    hand = [("Ace", "Hearts"), ("Ace", "Spades"), ("9", "Clubs")] # debugging
+    print(calc_score(hand)) # debugging
+
+
 if __name__ == "__main__":
     main()
 
