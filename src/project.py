@@ -89,7 +89,21 @@ def calc_score():
     Returns:
     - int: total score, accounting for ace cards
     """
+    # set score to 0 
+    # set ace count to 0 (have to account for aces and their score)
 
+    # for each card in your hand, get the card's value
+
+    # elif it's a jack, queen, king, add 10 to the score
+
+    # elif it's an ace, add 11 to the score and 1 to the ace count
+
+    # else if it's a number card just add the integer value to score
+
+    # while score is greater than 21 and ace count more than 0 
+    # subtract 10 from score and 1 from ace count
+
+    # return score
 
     pass
 
