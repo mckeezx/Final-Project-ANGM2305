@@ -89,9 +89,18 @@ def calc_score():
     Returns:
     - int: total score, accounting for ace cards
     """
-    # set score to 0 
-    # set ace count to 0 (have to account for aces and their score)
+    # create and set score to 0 
+    # create and set ace count to 0 (have to account for aces and their score)
+    score = 0
+    ace = 0
 
+    for card in hand:
+        value = card[0]
+
+        if value in ["Jack", "Queen", "King"]:
+            score += 10
+
+        
     # for each card in your hand, get the card's value
 
     # elif it's a jack, queen, king, add 10 to the score
