@@ -54,9 +54,6 @@ def create_deck():
             card = (value, suit)
             deck.append(card)
     
-    for card in deck:
-        print(f"{card[0]} of {card[1]}") # debugging
-
     return deck
 
 
@@ -79,7 +76,7 @@ def deal_card(deck):
     return card
 
 
-def calc_score():
+def calc_score(hand):
     """
     Calculates total value of the hand. 
 
