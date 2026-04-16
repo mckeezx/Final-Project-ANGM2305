@@ -100,6 +100,12 @@ def calc_score():
         if value in ["Jack", "Queen", "King"]:
             score += 10
 
+        elif == "Ace":
+            score += 11
+            aces += 1
+
+        
+
         
     # for each card in your hand, get the card's value
 
