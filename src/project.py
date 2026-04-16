@@ -104,7 +104,7 @@ def calc_score():
             score += 10
     
         # elif it's an ace, add 11 to the score and 1 to the ace count
-        elif == "Ace":
+        elif value == "Ace":
             score += 11
             ace += 1
         
@@ -115,7 +115,7 @@ def calc_score():
 
     # while score is greater than 21 and ace count more than 0 
     # subtract 10 from score and 1 from ace count
-    while score > 21 and aces > 0:
+    while score > 21 and ace > 0:
         score -= 10
         ace -= 1
 
