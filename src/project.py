@@ -94,26 +94,25 @@ def calc_score():
     score = 0
     ace = 0
 
+    # for each card in your hand, get the card's value
     for card in hand:
         value = card[0]
 
+
+        # elif it's a jack, queen, king, add 10 to the score
         if value in ["Jack", "Queen", "King"]:
             score += 10
-
+    
+        # elif it's an ace, add 11 to the score and 1 to the ace count
         elif == "Ace":
             score += 11
             aces += 1
-
         
+        # else if it's a number card just add the integer value to score
+        else:
+            score += int(value)
 
-        
-    # for each card in your hand, get the card's value
 
-    # elif it's a jack, queen, king, add 10 to the score
-
-    # elif it's an ace, add 11 to the score and 1 to the ace count
-
-    # else if it's a number card just add the integer value to score
 
     # while score is greater than 21 and ace count more than 0 
     # subtract 10 from score and 1 from ace count
