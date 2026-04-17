@@ -194,7 +194,6 @@ def player_turn(deck, hand):
             print("You draw a card.")
             hand.append(deal_card(deck))
 
-
         # if stand, end turn and break loop
         elif action == "stand":
             print("You stand.")
