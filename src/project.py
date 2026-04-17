@@ -185,7 +185,7 @@ def player_turn(deck, hand):
 
         # ask them to hit or stand
         
-        action = input("What do you do?").lower()
+        action = input("What do you do? ").lower()
 
         # if hit, deal a card
 
@@ -328,7 +328,7 @@ def play_round(deck, money):
     # update money
     if result == "win":
         money += bet
-    elif result == "lose"
+    elif result == "lose":
         money -= bet
         
     return money
@@ -337,6 +337,8 @@ def play_round(deck, money):
 
 def main():
 
+
+    deck = create_deck()
     money = 100
 
     while 0 < money < 300:
@@ -344,8 +346,8 @@ def main():
 
     print("Game over. Final money:", money)
 
-    # Create the deck of cards
-    deck = create_deck()
+
+
     # Create hands
     player_hand = []
     dealer_hand = []
