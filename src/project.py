@@ -196,10 +196,12 @@ def player_turn(deck, hand):
         # if stand, end turn and break loop
         elif action == "stand":
             print("You stand.")
-            playing = False 
+            return hand
 
         else: 
             print("Invalid input.")
+
+        return hand
 
 
 def dealer_turn(deck, hand):
@@ -317,17 +319,31 @@ def play_round(deck, money):
 
     # dealer turn
 
-    dealer_turn = dealer_turn(deck, dealer_hand)
+    dealer_hand = dealer_turn(deck, dealer_hand)
 
     # compare hands
 
     result = compare_hands(player_hand, dealer_hand)
 
     # update money
+    if result == "win":
+        money += bet
+    elif result == "lose"
+        money -= bet
+        
+    return money
 
 
 
 def main():
+
+    money = 100
+
+    while 0 < money < 300:
+        money = play_round(deck, money)
+
+    print("Game over. Final money:", money)
+
     # Create the deck of cards
     deck = create_deck()
     # Create hands
