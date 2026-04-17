@@ -253,11 +253,39 @@ def compare_hands(player, dealer):
     # if dealer or player busts, we already know 
     # calculate dealer and player score
 
+    player_score = calc_score(player_hand)
+    dealer_score = calc_score(dealer_hand)
+
+
     # if player > 21, you lose, return lose
+
+    if player_score > 21: 
+        print("You bust. You lose.")
+        return "lose"
+    
     # elif dealer > 21, you win, return win
+
+    elif dealer_score > 21:
+        print("Dealer busts. You win.")
+        return "win"
+
     # elif player > dealer, you win, return win
+
+    elif player_score > dealer_score
+            print("You win.")
+            return "win"
+
     # elif player < dealer, you lose, return lose
+
+    elif player_score < dealer_score
+            print("You lose.")
+            return "lose"
+
     # else, it's a tie, return push
+
+    else:
+        print("Push. (It's a tie).")
+        return "push"
 
     pass
 
