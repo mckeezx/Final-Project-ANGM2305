@@ -215,18 +215,28 @@ def dealer_turn(deck, hand):
     - else, stand
     """
 
-    # while the dealer score is less than 17
     while True:
         score = calc_score(hand)
 
         print("\nDealer's Hand:", hand)
         print("Dealer's Score:", score)
-        # if score is more than 21, bust
-    # draw a card
-    # recalculate score
 
-   
-    # otherwise, stand
+        # if score is more than 21, bust
+
+        if score > 21:
+            print("The Dealer busts.")
+            return hand
+        
+        # if score is more than 17, stand
+        elif score >= 17:
+            print("The Dealer stands.")
+            return hand
+        
+        # else, hit and draw a card
+        else:
+            print("The Dealer hits.")
+            hand.append(deal_card(deck))
+
 
 def compare_hands(player, dealer):
     """
