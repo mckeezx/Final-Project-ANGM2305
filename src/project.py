@@ -238,7 +238,7 @@ def dealer_turn(deck, hand):
             hand.append(deal_card(deck))
 
 
-def compare_hands(player, dealer):
+def compare_hands(player_hand, dealer_hand):
     """
     Compare the player's hand to dealer's. 
     
@@ -253,8 +253,8 @@ def compare_hands(player, dealer):
     # if dealer or player busts, we already know, but that just stops their turn
     # calculate dealer and player score
 
-    player_score = calc_score(player)
-    dealer_score = calc_score(dealer)
+    player_score = calc_score(player_hand)
+    dealer_score = calc_score(dealer_hand)
 
 
     # if player > 21, you lose, return lose
@@ -313,9 +313,16 @@ def play_round(deck, money):
     print("\nThe Dealer has:", dealer_hand[0]) # only reveals his first card)
 
     # player turn
-    
+    player_hand = player_turn(deck, player_hand)
+
     # dealer turn
+
+    dealer_turn = dealer_turn(deck, dealer_hand)
+
     # compare hands
+
+    result = compare_hands(player_hand, dealer_hand)
+
     # update money
 
 
