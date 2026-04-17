@@ -360,11 +360,6 @@ def main():
     dealer_hand.append(deal_card(deck))
     dealer_hand.append(deal_card(deck))
 
-    print(player_hand) # debugging
-    print(dealer_hand) # debugging
-
-    hand = [("Ace", "Hearts"), ("Ace", "Spades"), ("9", "Clubs")] # debugging
-    print(calc_score(hand)) # debugging
 
 
 if __name__ == "__main__":
