@@ -167,9 +167,8 @@ def player_turn(deck, hand):
     - hand: final player hand after hitting or standing
     """
     # loop while player is playing
-    playing = True
 
-    while playing:
+    while True:
         # show player their hand
         # show player score
 
@@ -188,7 +187,7 @@ def player_turn(deck, hand):
         
         action = input("What do you do?").lower()
 
-        # if hit, deal a card and calculate score again
+        # if hit, deal a card
 
         if action == "hit":
             print("You draw a card.")
@@ -215,7 +214,19 @@ def dealer_turn(deck, hand):
     - draws card if score < 17
     - else, stand
     """
-    pass
+
+    # while the dealer score is less than 17
+    while True:
+        score = calc_score(hand)
+
+        print("\nDealer's Hand:", hand)
+        print("Dealer's Score:", score)
+        # if score is more than 21, bust
+    # draw a card
+    # recalculate score
+
+   
+    # otherwise, stand
 
 def compare_hands(player, dealer):
     """
