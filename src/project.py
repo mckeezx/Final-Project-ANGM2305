@@ -303,9 +303,17 @@ def play_round(deck, money):
     print("Current money:", money)
 
     # take bet 
+    bet = int(input("Place your bet: "))
+
     # create deck
     # deal cards 
+    player_hand = [deal_card(deck), deal_card(deck)]
+    dealer_hand = [deal_card(deck), deal_card(deck)]
+
+    print("\nThe Dealer has:", dealer_hand[0]) # only reveals his first card)
+
     # player turn
+    
     # dealer turn
     # compare hands
     # update money
