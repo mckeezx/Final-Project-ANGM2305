@@ -298,6 +298,15 @@ def play_round(deck, money):
     Returns: 
     - Updates money (int)
     """
+
+    # take bet 
+    # create deck
+    # deal cards 
+    # player turn
+    # dealer turn
+    # compare hands
+    # update money
+
     pass
 
 def main():
