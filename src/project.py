@@ -299,6 +299,9 @@ def play_round(deck, money):
     - Updates money (int)
     """
 
+    print("· ♤ · ♡ · New Round · ♢ · ♧ ·")
+    print("Current money:", money)
+
     # take bet 
     # create deck
     # deal cards 
@@ -307,7 +310,7 @@ def play_round(deck, money):
     # compare hands
     # update money
 
-    pass
+
 
 def main():
     # Create the deck of cards
