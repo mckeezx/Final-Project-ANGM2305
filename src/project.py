@@ -167,24 +167,42 @@ def player_turn(deck, hand):
     - hand: final player hand after hitting or standing
     """
     # loop while player is playing
-    while True:
+    playing = True
+
+    while playing:
+        # show player their hand
+        # show player score
+
         print("\nYour Hand:", hand)
         score = calc_score(hand)
         print("Your Score:", score)
 
-        # show player their hand
-        # show player score
+        # check if they bust already
+        # if score > 21, bust and break loop
+
+        if score > 21:
+            print("You bust.")
+            return hand 
 
         # ask them to hit or stand
+        
+        action = input("What do you do?").lower()
 
         # if hit, deal a card and calculate score again
 
-        # if score > 21, bust and break loop
+        if action == "hit":
+            print("You draw a card.")
+            hand.append(deal_card(deck))
+
 
         # if stand, end turn and break loop
+        elif action == "stand":
+            print("You stand.")
+            playing = False 
 
-    
-    pass
+        else: 
+            print("Invalid input.")
+
 
 def dealer_turn(deck, hand):
     """
