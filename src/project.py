@@ -249,6 +249,16 @@ def compare_hands(player, dealer):
     Returns: 
     win, lose, push
     """
+
+    # if dealer or player busts, we already know 
+    # calculate dealer and player score
+
+    # if player > 21, you lose, return lose
+    # elif dealer > 21, you win, return win
+    # elif player > dealer, you win, return win
+    # elif player < dealer, you lose, return lose
+    # else, it's a tie, return push
+
     pass
 
 def play_round(deck, money):
