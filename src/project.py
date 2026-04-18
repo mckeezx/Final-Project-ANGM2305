@@ -303,7 +303,13 @@ def play_round(deck, money):
     print("Current money:", money)
 
     # take bet 
-    bet = int(input("Place your bet: "))
+    while True:
+        try:
+         bet = int(input("Place your bet: "))
+         break
+        except ValueError:
+            print("Please enter a number.")
+
 
     # create deck
     # deal cards 
