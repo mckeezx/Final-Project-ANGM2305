@@ -159,6 +159,20 @@ def card_format(card):
     # return card[0] of card[1]
     return f"{card[0] of {card[1]}}"
 
+def hand_format(hand):
+    """
+    Formats hand to display all cards as "X of Ys". 
+    ex: Jack of Hearts, Ace of Spades
+
+    Inputs:
+    - hand: list of cards
+
+    Returns: 
+    - formatted hand
+    """
+    # return formatted hand by calling card_format 
+    
+
 
 
 def render_card(card, hidden=False):
