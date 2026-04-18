@@ -171,7 +171,7 @@ def hand_format(hand):
     - formatted hand
     """
     # return formatted hand by calling card_format 
-    
+    return [card_format(card) for card in hand]
 
 
 
