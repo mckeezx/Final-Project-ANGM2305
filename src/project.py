@@ -49,10 +49,11 @@ def create_deck():
     suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
     values = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
 
-    for suit in suits:
-        for value in values:
-            card = (value, suit)
-            deck.append(card)
+    for _ in range(8): # vegas is 8 deck blackjack
+        for suit in suits:
+            for value in values:
+                card = (value, suit)
+                deck.append(card)
     
     return deck
 
@@ -301,6 +302,11 @@ def play_round(deck, money):
 
     print("· ♤ · ♡ · New Round · ♢ · ♧ ·")
     print("Current money:", money)
+
+    if len(deck) < 52:
+        print("Reshuffling...")
+        deck.clear()
+        deck.extend(create_deck())
 
     # take bet 
     while True:
