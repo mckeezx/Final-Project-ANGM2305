@@ -157,6 +157,9 @@ def card_format(card):
     """
 
     # return card[0] of card[1]
+    return f"{card[0] of {card[1]}}"
+
+
 
 def render_card(card, hidden=False):
     """
