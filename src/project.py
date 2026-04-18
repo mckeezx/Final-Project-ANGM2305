@@ -306,8 +306,10 @@ def play_round(deck, money):
     while True:
         try:
             bet = int(input("Place your bet: "))
-            if bet <= 0:
-                print("Bets must be more than $0.")
+            if bet < 15:
+                print("Minimum bet is $15.")
+            elif bet > 100:
+                print("Maximum bet is $100.")
             elif bet > money:
                 print(f"You only have ${money}.")
             else:
@@ -348,9 +350,9 @@ def main():
 
 
     deck = create_deck()
-    money = 100
+    money = 500
 
-    while 0 < money < 300:
+    while 0 < money < 1500:
         money = play_round(deck, money)
 
     print("Game over. Final money:", money)
