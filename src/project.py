@@ -144,6 +144,20 @@ def check_blackjack(hand):
         return True
     return False
 
+def card_format(card):
+    """ 
+    Formats card to display as "X of Ys".
+    ex: Jack of Hearts
+
+    Inputs: 
+    card: card in hand
+
+    Returns:
+    - formatted card
+    """
+
+    # return card[0] of card[1]
+
 def render_card(card, hidden=False):
     """
     Rendering ASCII of cards.
