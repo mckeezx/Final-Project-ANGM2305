@@ -242,7 +242,7 @@ def player_turn(deck, hand):
         # show player their hand
         # show player score
 
-        print("\nYour Hand:", hand)
+        print("\nYour Hand:", hand_format(hand))
         score = calc_score(hand)
         print("Your Score:", score)
 
@@ -398,7 +398,7 @@ def play_round(deck, money):
     player_hand = [deal_card(deck), deal_card(deck)]
     dealer_hand = [deal_card(deck), deal_card(deck)]
 
-    print("\nThe Dealer has:", dealer_hand[0]) # only reveals his first card)
+    print("\nThe Dealer has:", card_format(dealer_hand[0])) # only reveals his first card)
 
     if check_blackjack(player_hand):
         print("Blackjack!")
