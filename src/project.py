@@ -144,7 +144,30 @@ def check_blackjack(hand):
         return True
     return False
 
-def display_hand():
+def render_card(card, hidden=False):
+    """
+    Rendering ASCII of cards.
+
+    Inputs:
+    - card: card in hand
+    - hidden=False: dealer's hidden card 
+
+    Returns:
+    - None (prints hand to console)
+    """
+    
+    # match each suit to the symbol
+    # abbreviate jack, queen, king, ace
+    # if card is hidden (dealer's card), return a special ascii card
+    # set variable for card's value
+    # also set variable for abbreviations with .get
+    # set variable for turning card's suit into a symbol
+    # 10 is two characters wide so fix alignment
+    # else, have the value be left aligned on top and right aligned on bottom
+    # return ASCII card
+
+
+def render_hand():
     """
     UI to display and print the hand.
 
