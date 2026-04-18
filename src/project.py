@@ -325,6 +325,11 @@ def play_round(deck, money):
 
     print("\nThe Dealer has:", dealer_hand[0]) # only reveals his first card)
 
+    if check_blackjack(player_hand):
+        print("Blackjack!")
+        money += int(bet * 1.5) # 3:2 payout for nat blackjack in Vegas
+        return money
+
     # player turn
     player_hand = player_turn(deck, player_hand)
 
