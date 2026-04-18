@@ -201,8 +201,6 @@ def player_turn(deck, hand):
         else: 
             print("Invalid input.")
 
-        return hand
-
 
 def dealer_turn(deck, hand):
     """
