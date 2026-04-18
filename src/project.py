@@ -305,8 +305,13 @@ def play_round(deck, money):
     # take bet 
     while True:
         try:
-         bet = int(input("Place your bet: "))
-         break
+            bet = int(input("Place your bet: "))
+            if bet <= 0:
+                print("Bets must be more than $0.")
+            elif bet > money:
+                print(f"You only have ${money}.")
+            else:
+                break
         except ValueError:
             print("Please enter a number.")
 
