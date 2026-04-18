@@ -158,9 +158,22 @@ def render_card(card, hidden=False):
     
     # match each suit to the symbol
     symbols = {"Hearts": "♥", "Diamonds": "♦", "Clubs": "♣", "Spades": "♠"}
+
     # abbreviate jack, queen, king, ace
     abbreviations = {"Jack": "J", "Queen": "Q", "King": "K", "Ace": "A"}
+
     # if card is hidden (dealer's card), return a special ascii card
+    if hidden: 
+        return [
+            "┌─────────┐",
+            "│ ?       │"
+            "│         │"
+            "│    ?    │"
+            "│         │"
+            "│       ? │"
+            "└─────────┘"
+        ]
+
     # set variable for card's value
     # also set variable for abbreviations with .get
     # set variable for turning card's suit into a symbol
