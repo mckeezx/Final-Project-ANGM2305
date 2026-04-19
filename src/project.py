@@ -1,6 +1,15 @@
 import random
 import os
 
+def clear():
+    """
+    Clears the terminal for a clean UI.
+
+    Output:
+    - clear 
+    """
+    # have it clear terminal on both windows and mac
+
 
 # Game Loop 
 # Player starts with $100 
