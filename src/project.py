@@ -307,6 +307,9 @@ def player_turn(deck, hand):
         elif action == "stand":
             print("You stand.")
             return hand
+        
+        elif action == "quit":
+            quit()
 
         else: 
             print("Invalid input.")
