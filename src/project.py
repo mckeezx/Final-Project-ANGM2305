@@ -209,14 +209,32 @@ def render_card(card, hidden=False):
     value = card[0]
 
     # also set variable for abbreviations with .get
-    abbreviations.get(value, value) # will look for abbrevation value first
+    value = abbreviations.get(value, value) # will look for abbrevation value first
 
     # set variable for turning card's suit into a symbol
     suit = symbols[card[1]]
-    
+
     # 10 is two characters wide so fix alignment
-    # else, have the value be left aligned on top and right aligned on bottom
+    if value == "10":
+        top = f"│ 10      │"
+        bottom = f"│      10 │"
+    else: 
+        top = f"│ {value:<2}      │" #<2 means left centered
+        bottom = f"│      {value:>2} │"  #>2 means right centered
+
+        # else, have the value be left aligned on top and right aligned on bottom
+
+
     # return ASCII card
+    return [
+        "┌─────────┐",
+        top,
+        "│         │",
+        f"│    {suit}    │", #should be 4 spaces on each side (middle)
+        "│         │",
+        bottom,
+        "└─────────┘"
+    ]
 
 
 def render_hand():
@@ -461,5 +479,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+   # main()
 
+test_card = ("Jack", "Hearts")
+for line in render_card(test_card):
+    print(line) # debugging, shows up at the end of gameplay
