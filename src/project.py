@@ -272,13 +272,14 @@ def render_hand(hand, hide_first=False):
     for row in zip(*cards):
         print("  ".join(row))
 
-def player_turn(deck, hand):
+def player_turn(deck, hand, dealer_hand):
     """
     Handles player's actions during their turn.
 
     Inputs:
     - deck: list of remaining cards
     - hand: current player hand
+    - dealer_hand: current dealer hand
 
     Returns: 
     - hand: final player hand after hitting or standing
@@ -329,13 +330,14 @@ def player_turn(deck, hand):
             print("Invalid input.")
 
 
-def dealer_turn(deck, hand):
+def dealer_turn(deck, hand, player_hand):
     """
     Logic to decide dealer's action.
 
     Inputs: 
     - hand: current dealer hand
     - deck: list of remaining cards
+    - player_hand: current player hand
 
     Returns:
     - draws card if score < 17
@@ -343,9 +345,14 @@ def dealer_turn(deck, hand):
     """
 
     while True:
+        clear()
+
         score = calc_score(hand)
 
-        print("\nDealer's Hand:", hand)
+        print("\nDealer's Hand:")
+        render_hand(dealer_hand)
+        print("\nYour Hand:")
+        render_hand(player_hand)
         print("Dealer's Score:", score)
 
         # if score is more than 21, bust
@@ -462,11 +469,11 @@ def play_round(deck, money):
         return money
 
     # player turn
-    player_hand = player_turn(deck, player_hand)
+    player_hand = player_turn(deck, player_hand, dealer_hand)
 
     # dealer turn
 
-    dealer_hand = dealer_turn(deck, dealer_hand)
+    dealer_hand = dealer_turn(deck, dealer_hand, player_hand)
 
     # compare hands
 
@@ -478,6 +485,13 @@ def play_round(deck, money):
     elif result == "lose":
         money -= bet
         
+
+    clear() 
+    print("Dealer's Hand:")
+    render_hand(dealer_hand)
+    print("\nYour Hand:")
+    render_hand(player_hand)
+    time.sleep(4)
     return money
 
 
