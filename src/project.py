@@ -206,8 +206,12 @@ def render_card(card, hidden=False):
         ]
 
     # set variable for card's value
+    value = card[0]
+
     # also set variable for abbreviations with .get
+    
     # set variable for turning card's suit into a symbol
+    suit = symbols[card[1]]
     # 10 is two characters wide so fix alignment
     # else, have the value be left aligned on top and right aligned on bottom
     # return ASCII card
