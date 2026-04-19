@@ -463,21 +463,6 @@ def main():
 
 
 
-    # Create hands
-    player_hand = []
-    dealer_hand = []
-
-    # Deal player 2 cards
-    player_hand.append(deal_card(deck))
-    player_hand.append(deal_card(deck))
-
-    # Deal dealer 2 cards
-    dealer_hand.append(deal_card(deck))
-    dealer_hand.append(deal_card(deck))
-    
-    # It has been 30 games and I haven't won once. The dealer has gacha levels of RNG.
-
-
 if __name__ == "__main__":
    # main()
 
