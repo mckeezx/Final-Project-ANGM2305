@@ -302,10 +302,12 @@ def player_turn(deck, hand, dealer_hand):
 
         if score > 21:
             print("You bust.")
+            time.sleep(1)
             return hand 
         
         if score == 21:
             print("21! Standing automatically.")
+            time.sleep(1)
             return hand
 
         # ask them to hit or stand
@@ -345,6 +347,7 @@ def dealer_turn(deck, hand, player_hand):
     """
 
     while True:
+        time.sleep(1) 
         clear()
 
         score = calc_score(hand)
