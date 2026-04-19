@@ -288,8 +288,11 @@ def player_turn(deck, hand):
     while True:
         # show player their hand
         # show player score
-
-        print("\nYour Hand:", hand_format(hand))
+        clear()
+        print("Dealer's Hand:")
+        render_hand(dealer_hand, hide_first=True)
+        print("\nYour Hand:")
+        render_hand(player_hand)
         score = calc_score(hand)
         print("Your Score:", score)
 
