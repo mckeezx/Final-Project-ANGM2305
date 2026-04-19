@@ -292,6 +292,7 @@ def player_turn(deck, hand, dealer_hand):
         clear()
         print("Dealer's Hand:")
         render_hand(dealer_hand, hide_first=True)
+        print(f"Dealer's Score: ?") 
         print("\nYour Hand:")
         render_hand(hand)
         score = calc_score(hand)
