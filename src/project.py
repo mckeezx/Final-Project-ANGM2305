@@ -350,7 +350,7 @@ def dealer_turn(deck, hand, player_hand):
         score = calc_score(hand)
 
         print("\nDealer's Hand:")
-        render_hand(dealer_hand)
+        render_hand(hand)
         print("\nYour Hand:")
         render_hand(player_hand)
         print("Dealer's Score:", score)
