@@ -255,11 +255,14 @@ def render_hand():
 
     Inputs:
     - hand: list of cards
+    - hide_first = False: hide dealer's second card on player turn
 
     Returns:
     - None (prints hand to console)
     """
-    pass
+    # make a list of rendered cards
+    # use zip to make cards stay on the same row
+    # join each row and print
 
 def player_turn(deck, hand):
     """
