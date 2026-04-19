@@ -249,7 +249,7 @@ def render_card(card, hidden=False):
     ]
 
 
-def render_hand():
+def render_hand(hand, hide_first=False):
     """
     UI to display and print the hand.
 
@@ -262,10 +262,12 @@ def render_hand():
     """
     # make a list of rendered cards
     cards = []
-    for card in hand:
-        cards.append(render_card(card))
+    for mark, card in enumerate(hand):
+        if hide_first and mark == 0:
+            cards.append(render_card(card, hidden=True))
+        else:
+            cards.append(render_card(card))
     # use zip to make cards stay on the same row
-    zip(*cards)
     # join each row and print
     for row in zip(*cards):
         print("  ".join(row))
