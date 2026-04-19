@@ -1,5 +1,6 @@
 import random
 import os
+import time
 
 def clear():
     """
@@ -407,7 +408,6 @@ def play_round(deck, money):
     Returns: 
     - Updates money (int)
     """
-
     print("· ♤ · ♡ · New Round · ♢ · ♧ ·")
     print("Current money:", money)
 
@@ -479,8 +479,4 @@ def main():
 
 
 if __name__ == "__main__":
-   # main()
-
-test_card = ("Jack", "Hearts")
-for line in render_card(test_card):
-    print(line) # debugging, shows up at the end of gameplay
+    main()
