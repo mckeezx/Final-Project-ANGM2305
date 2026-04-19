@@ -209,9 +209,11 @@ def render_card(card, hidden=False):
     value = card[0]
 
     # also set variable for abbreviations with .get
-    
+    abbreviations.get(value, value) # will look for abbrevation value first
+
     # set variable for turning card's suit into a symbol
     suit = symbols[card[1]]
+    
     # 10 is two characters wide so fix alignment
     # else, have the value be left aligned on top and right aligned on bottom
     # return ASCII card
