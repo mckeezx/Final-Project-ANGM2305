@@ -9,6 +9,7 @@ def clear():
     - clear 
     """
     # have it clear terminal on both windows and mac
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 # Game Loop 
