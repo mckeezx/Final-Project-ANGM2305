@@ -276,6 +276,10 @@ def player_turn(deck, hand):
         if score > 21:
             print("You bust.")
             return hand 
+        
+        if score == 21:
+            print("21! Standing automatically.")
+            return hand
 
         # ask them to hit or stand
         
