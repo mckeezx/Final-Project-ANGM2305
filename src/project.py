@@ -261,8 +261,14 @@ def render_hand():
     - None (prints hand to console)
     """
     # make a list of rendered cards
+    cards = []
+    for card in hand:
+        cards.append(render_card(card))
     # use zip to make cards stay on the same row
+    zip(*cards)
     # join each row and print
+    for row in zip(*cards):
+        print("  ".join(row))
 
 def player_turn(deck, hand):
     """
