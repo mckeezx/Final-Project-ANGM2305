@@ -209,11 +209,11 @@ def render_card(card, hidden=False):
     if hidden: 
         return [
             "┌─────────┐",
-            "│ ?       │"
-            "│         │"
-            "│    ?    │"
-            "│         │"
-            "│       ? │"
+            "│ ?       │",
+            "│         │",
+            "│    ?    │",
+            "│         │",
+            "│       ? │",
             "└─────────┘"
         ]
 
@@ -293,7 +293,7 @@ def player_turn(deck, hand, dealer_hand):
         print("Dealer's Hand:")
         render_hand(dealer_hand, hide_first=True)
         print("\nYour Hand:")
-        render_hand(player_hand)
+        render_hand(hand)
         score = calc_score(hand)
         print("Your Score:", score)
 
