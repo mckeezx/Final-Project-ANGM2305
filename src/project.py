@@ -354,6 +354,8 @@ def dealer_turn(deck, hand, player_hand):
         score = calc_score(hand)
         print(f"The Dealer reveals: {card_format(hand[0])}")
         print(f"Leading to a score of: {calc_score(hand)}")
+        time.sleep(2)
+
         print("\nDealer's Hand:")
         render_hand(hand)
         print("\nYour Hand:")
@@ -470,6 +472,18 @@ def play_round(deck, money):
 
     # player turn
     player_hand = player_turn(deck, player_hand, dealer_hand)
+
+
+    if calc_score(player_hand) > 21:
+        clear()
+        print("Dealer's Hand:")
+        render_hand(dealer_hand)
+        print("\nYour Hand:")
+        render_hand(player_hand)
+        print("\nYou busted. Round over.")
+        money -= bet
+        time.sleep(4)
+        return money
 
     # dealer turn
 
