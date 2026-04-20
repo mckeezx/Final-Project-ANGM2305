@@ -607,7 +607,7 @@ def play_round(deck, money):
         starting_money = money
         money += bet
         # Counting up effect I found and am taking
-        for x in range(old, money + 1, 5):
+        for x in range(starting_money, money + 1, 5):
             clear()
             print(f"Bankroll: ${x}")
             time.sleep(0.02)
