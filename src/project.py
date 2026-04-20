@@ -604,7 +604,13 @@ def play_round(deck, money):
     print(f"Your Score: {calc_score(player_hand)}")
 
     if result == "win":
+        starting_money = money
         money += bet
+        # Counting up effect I found and am taking
+        for x in range(old, money + 1, 5):
+            clear()
+            print(f"Bankroll: ${x}")
+            time.sleep(0.02)
         print(f"\n{Color.GREEN}You win the round. +${bet}{Color.RESET}")
     elif result == "lose":
         money -= bet
