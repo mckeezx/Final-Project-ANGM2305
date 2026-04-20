@@ -365,8 +365,7 @@ def dealer_turn(deck, hand, player_hand):
     print(f"Leading to a score of: {calc_score(hand)}")
     time.sleep(1.2)
 
-    while True:
-        time.sleep(1) 
+    while True: 
         clear()
 
         score = calc_score(hand)
@@ -381,16 +380,19 @@ def dealer_turn(deck, hand, player_hand):
 
         if score > 21:
             print("The Dealer busts.")
+            time.sleep(1.5)
             return hand
         
         # if score is more than 17, stand
         elif score >= 17:
             print("The Dealer stands.")
+            time.sleep(1.5)
             return hand
         
         # else, hit and draw a card
         else:
-            print("The Dealer hits.")
+            print("The Dealer draws...")
+            time.sleep(.8)
             hand.append(deal_card(deck))
 
 
@@ -452,7 +454,7 @@ def play_round(deck, money):
     """
     clear()
     print("· ♤ · ♡ · New Round · ♢ · ♧ ·")
-    print("Current money:", money)
+    print("Current money:", "$"money)
 
     if len(deck) < 52:
         print("Reshuffling...")
