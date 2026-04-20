@@ -478,6 +478,15 @@ def animate_money(old, new):
     - Animation to terminal
     """
     # have it count in steps of 5 if new is higher than old, vice versa for negative
+    if new > old:
+        step = 5
+    else:
+        step = -5
+
+    for x in range of (old, new + step, step):
+        clear()
+        print(f"Bankroll: ${x}")
+        time.sleep(0.02)
 
 def play_round(deck, money):
     """ 
