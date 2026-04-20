@@ -352,7 +352,7 @@ def player_turn(deck, hand, dealer_hand):
     
 
         if action == "hit":
-            print("You draw a card.")
+            print(f"{Color.CYAN}You draw a card.{Color.RESET}")
             hand.append(deal_card(deck))
             time.sleep(0.6)
 
@@ -412,7 +412,7 @@ def dealer_turn(deck, hand, player_hand):
         
         # else, hit and draw a card
         else:
-            print("The Dealer draws...")
+            print(f"{Color.CYAN}The Dealer draws...{Color.RESET}")
             time.sleep(.8)
             hand.append(deal_card(deck))
 
@@ -546,7 +546,7 @@ def play_round(deck, money):
 
     if check_blackjack(player_hand):
         time.sleep(1)
-        print("Blackjack!")
+        print(f"{Color.YELLOW}{Color.BOLD}Blackjack!{Color.RESET}")
         money += int(bet * 1.5) # 3:2 payout for nat blackjack in Vegas
         time.sleep(2)
         return money
@@ -600,10 +600,10 @@ def play_round(deck, money):
 
     if result == "win":
         money += bet
-        print(f"\nYou win the round. +${bet}")
+        print(f"\n{Color.GREEN}You win the round. +${bet}{Color.RESET}")
     elif result == "lose":
         money -= bet
-        print(f"\nYou lose the round. -${bet}")
+        print(f"\n{Color.RED}You lose the round. -${bet}{Color.RESET}")
     else:
         print(f"\nPush. You keep your ${bet}.")
 
