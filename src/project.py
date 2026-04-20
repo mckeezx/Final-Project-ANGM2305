@@ -488,6 +488,20 @@ def animate_money(old, new):
         print(f"Bankroll: ${x}")
         time.sleep(0.02)
 
+def update_money(money, change):
+    """
+    Updates and animates money in one function.
+    
+    Inputs:
+    - Money: current money
+    - Change: how much the money goes up/down
+
+    Outputs:
+    - Animation to terminal
+    """
+    # set old = money, money added to change, animate, return
+
+
 def play_round(deck, money):
     """ 
     Plays a round of Vegas Strip Blackjack.
@@ -625,21 +639,14 @@ def play_round(deck, money):
     print(f"Your Score: {calc_score(player_hand)}")
 
     if result == "win":
-        starting_money = money
+        old = money
         money += bet
-        # Counting up effect I found and am taking
-        for x in range(starting_money, money + 1, 5):
-            clear()
-            print(f"Bankroll: ${x}")
-            time.sleep(0.02)
+        animate_money(old, money)
         print(f"\n{Color.GREEN}You win the round. +${bet}{Color.RESET}")
     elif result == "lose":
         starting_money = money
         money += bet
-        for x in range(starting_money, money - 1, 5):
-            clear()
-            print(f"Bankroll: ${x}")
-            time.sleep(0.02)
+        animate_money(old, money)
         print(f"\n{Color.RED}You lose the round. -${bet}{Color.RESET}")
     else:
         print(f"\nPush. You keep your ${bet}.")
