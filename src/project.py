@@ -500,6 +500,9 @@ def play_round(deck, money):
         time.sleep(4)
         return money
     
+    result = player_turn(deck, player_hand, dealer_hand)
+
+
     if result == "surrender":
         clear()
         print("You surrendered.")
