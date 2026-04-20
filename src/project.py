@@ -312,8 +312,14 @@ def player_turn(deck, hand, dealer_hand):
             return hand
 
         # ask them to hit or stand
+
+        action_list = "hit/stand"
+        if len(hand) == 2:
+            action_list += "/surrender/double"
         
-        action = input("What do you do? (hit/stand/double/surrender) ").lower()
+        action = input(f"\nWhat will you do?\nActions: ({action_list}) ").lower()
+
+
 
         # if hit, deal a card
 
@@ -483,8 +489,10 @@ def play_round(deck, money):
     print("Your Score:", score)
 
     if check_blackjack(player_hand):
+        time.sleep(1)
         print("Blackjack!")
         money += int(bet * 1.5) # 3:2 payout for nat blackjack in Vegas
+        time.sleep(3)
         return money
 
     # player turn
