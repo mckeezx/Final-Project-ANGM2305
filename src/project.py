@@ -13,6 +13,20 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
+class Color:
+    """ 
+    Manipulate text color using ANSI color codes.
+
+    Output: 
+    - Colors
+    """
+    # RED - LOSE
+    # YELLOW - BLACKJACK
+    # GREEN - WIN
+    # BLUE - ACTIONS
+    # BOLD - IMPORTANT
+    # RESET - CLEAN TEXT
+
 # Game Loop 
 # Player starts with $100 
 # If money is more than $0 and less than $300 play a round (Core)
