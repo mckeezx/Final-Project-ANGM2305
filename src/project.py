@@ -292,7 +292,7 @@ def player_turn(deck, hand, dealer_hand):
         clear()
         print("Dealer's Hand:")
         render_hand(dealer_hand, hide_first=True)
-        print(f"Dealer's Score: ?") 
+        print("Dealer's Score: ?") 
         print("\nYour Hand:")
         render_hand(hand)
         score = calc_score(hand)
@@ -464,7 +464,14 @@ def play_round(deck, money):
     player_hand = [deal_card(deck), deal_card(deck)]
     dealer_hand = [deal_card(deck), deal_card(deck)]
 
-    print("\nThe Dealer has:", card_format(dealer_hand[0])) # only reveals his first card)
+    clear()
+    print("Dealer's Hand:")
+    render_hand(dealer_hand, hide_first=True)
+    print("Dealer's Score: ?") 
+    print("\nYour Hand:")
+    render_hand(player_hand)
+    score = calc_score(player_hand)
+    print("Your Score:", score)
 
     if check_blackjack(player_hand):
         print("Blackjack!")
@@ -481,7 +488,7 @@ def play_round(deck, money):
         render_hand(dealer_hand)
         print("\nYour Hand:")
         render_hand(player_hand)
-        print(f"\n The Dealer had a score of {calc_score(dealer_hand)}")
+        print(f"\nThe Dealer had a score of {calc_score(dealer_hand)}")
         print("\nYou busted. Round over.")
         money -= bet
         time.sleep(4)
@@ -505,12 +512,12 @@ def play_round(deck, money):
 
     if result == "win":
         money += bet
-        print("\nYou win the round.")
+        print(f"\nYou win the round. +${bet}")
     elif result == "lose":
         money -= bet
-        print("\nYou lose the round.")
+        print(f"\nYou lose the round. -${bet}")
     else:
-        print("\nPush. It's a tie.")
+        print(f"\nPush. You keep your ${bet}.")
 
 
     time.sleep(4)
