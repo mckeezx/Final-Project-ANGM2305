@@ -347,14 +347,15 @@ def dealer_turn(deck, hand, player_hand):
     - else, stand
     """
 
+    print(f"The Dealer reveals: {card_format(hand[0])}")
+    print(f"Leading to a score of: {calc_score(hand)}")
+    time.sleep(2)
+
     while True:
         time.sleep(1) 
         clear()
 
         score = calc_score(hand)
-        print(f"The Dealer reveals: {card_format(hand[0])}")
-        print(f"Leading to a score of: {calc_score(hand)}")
-        time.sleep(2)
 
         print("\nDealer's Hand:")
         render_hand(hand)
