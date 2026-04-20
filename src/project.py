@@ -466,6 +466,18 @@ def compare_hands(player_hand, dealer_hand):
     else:
         return "push"
 
+def animate_money(old, new):
+    """
+    Animates money payout as if it's counting like a slot.
+
+    Inputs:
+    - Old: current money before betting
+    - New: money after the round
+    
+    Output:
+    - Animation to terminal
+    """
+    # have it count in steps of 5 if new is higher than old, vice versa for negative
 
 def play_round(deck, money):
     """ 
