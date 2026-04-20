@@ -438,10 +438,12 @@ def play_round(deck, money):
 
     Input: 
     - Money: player's current money
+    - Deck: list of cards
 
     Returns: 
     - Updates money (int)
     """
+    clear()
     print("· ♤ · ♡ · New Round · ♢ · ♧ ·")
     print("Current money:", money)
 
@@ -486,20 +488,6 @@ def play_round(deck, money):
         return money
 
     # player turn
-    player_hand = player_turn(deck, player_hand, dealer_hand)
-
-    if calc_score(player_hand) > 21:
-        clear()
-        print("Dealer's Hand:")
-        render_hand(dealer_hand)
-        print("\nYour Hand:")
-        render_hand(player_hand)
-        print(f"\nThe Dealer had a score of {calc_score(dealer_hand)}")
-        print("\nYou busted. Round over.")
-        money -= bet
-        time.sleep(4)
-        return money
-    
     result = player_turn(deck, player_hand, dealer_hand)
 
 
@@ -513,6 +501,20 @@ def play_round(deck, money):
         return money
     
     player_hand = result
+
+    if calc_score(player_hand) > 21:
+        clear()
+        print("Dealer's Hand:")
+        render_hand(dealer_hand)
+        print("\nYour Hand:")
+        render_hand(player_hand)
+        print(f"\nThe Dealer had a score of {calc_score(dealer_hand)}")
+        print("\nYou busted. Round over.")
+        money -= bet
+        time.sleep(4)
+        return money
+    
+    
     
 
     
