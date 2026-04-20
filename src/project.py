@@ -493,7 +493,9 @@ def play_round(deck, money):
     dealer_visible = dealer_hand[1]
     peek_trigger = ["Ace", "10", "Jack", "Queen", "King"]
 
-
+    if dealer_visible[0] in peek_trigger:
+        if dealer_visible == "Ace":
+            pass # add insurance later
     # if dealer visible card = ace:
     # offer insurance
     # peek for blackjack
