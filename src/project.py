@@ -80,6 +80,8 @@ def title_screen():
     #print press to start
     clear()
     print(f"{Color.BOLD}♠ ♥ BLACKJACK: SIMPLIFIED ♦ ♣{Color.RESET}")
+    print(f"\nCreated by: Zachary McKee")
+    print(f"ANGM 2305 - Final Project")
     print("\nPress enter to start.")
     input()
 
@@ -664,7 +666,7 @@ def play_round(deck, money):
 
 
 def main():
-
+    title_screen()
 
     deck = create_deck()
     money = 500
