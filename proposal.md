@@ -1,5 +1,5 @@
 # Title
-Blackjack
+Blackjack: Simplified
 
 ## Repository
 https://github.com/mckeezx/Project-Proposal
@@ -58,7 +58,7 @@ Minimal Viable Outcome:
   3. Blackjack Logic
 
 - Week 3 (4/27-5/1)
-  1. Vegas Strip Mechanics 
+  1. Vegas Strip Mechanics (only added surrender)
   2. UI
 
 - Week 4 (4/4-4/8)
