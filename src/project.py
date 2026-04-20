@@ -490,6 +490,9 @@ def play_round(deck, money):
 
     # dealer peeking mechanic
     # if the card is an ace / 10 value, the dealer will peek for nat blackjack
+    dealer_visible = dealer_hand[1]
+    peek_trigger = ["Ace", "10", "Jack", "Queen", "King"]
+
 
     # if dealer visible card = ace:
     # offer insurance
