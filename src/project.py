@@ -20,12 +20,19 @@ class Color:
     Output: 
     - Colors
     """
-    # RED - LOSE
-    # YELLOW - BLACKJACK
+    # SOURCE: https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124
+    # RED - LOSE 
+    RED = "\033[0;91m"
+    # YELLOW - BLACKJACK 
+    YELLOW = "\033[0;93m"
     # GREEN - WIN
-    # BLUE - ACTIONS
+    GREEN = "\033[0;92m"
+    # CYAN - ACTIONS
+    CYAN = "\033[0;96m"
     # BOLD - IMPORTANT
+    BOLD = "\033[1m"
     # RESET - CLEAN TEXT
+    RESET = "\033[0m"
 
 # Game Loop 
 # Player starts with $100 
