@@ -481,6 +481,7 @@ def play_round(deck, money):
         render_hand(dealer_hand)
         print("\nYour Hand:")
         render_hand(player_hand)
+        print(f"\n The Dealer had a score of {calc_score(dealer_hand)}")
         print("\nYou busted. Round over.")
         money -= bet
         time.sleep(4)
