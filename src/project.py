@@ -591,6 +591,7 @@ def play_round(deck, money):
         # if player also has blackjack, tie
         else:
             print("\nThe Dealer has blackjack. You lose.")
+            time.sleep(2)
             money = update_money(money, -bet)
         time.sleep(2)
         return money
@@ -626,6 +627,7 @@ def play_round(deck, money):
         render_hand(player_hand)
         print(f"\nThe Dealer had a score of {calc_score(dealer_hand)}")
         print("\nYou busted. Round over.")
+        time.sleep(2)
         money = update_money(money, -bet)
         time.sleep(2)
         return money
@@ -652,12 +654,17 @@ def play_round(deck, money):
 
     if result == "win":
         print(f"\n{Color.GREEN}You win the round. +${bet}{Color.RESET}")
+        time.sleep(2)
         money = update_money(money, bet)
+        time.sleep(2)
     elif result == "lose":
         print(f"\n{Color.RED}You lose the round. -${bet}{Color.RESET}")
+        time.sleep(2)
         money = update_money(money, -bet)
+        time.sleep(2)
     else:
         print(f"\nPush. You keep your ${bet}.")
+        time.sleep(2)
 
 
     time.sleep(2)
