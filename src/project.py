@@ -70,6 +70,18 @@ class Color:
 # ELIF player < dealer then lsoe
 # ELSE push/tie
 
+def title_screen():
+    """
+    Make's a title screen before playing. 
+    
+    """
+    #clear screen
+    #make bold title
+    #print press to start
+    
+
+
+
 def create_deck():
     """
     Creates list of a deck of cards. 
@@ -339,9 +351,9 @@ def player_turn(deck, hand, dealer_hand):
 
         # ask them to hit or stand
 
-        action_list = "hit/stand"
+        action_list = "hit/stand/quit"
         if len(hand) == 2:
-            action_list += "/surrender/double"
+            action_list += "/surrender"
         
         action = input(f"\nWhat will you do?\nActions: ({action_list}) ").lower()
 
@@ -562,19 +574,9 @@ def play_round(deck, money):
     dealer_visible = dealer_hand[1]
     peek_trigger = ["Ace", "10", "Jack", "Queen", "King"]
 
-    if dealer_visible[0] in peek_trigger:
-        if dealer_visible[0] == "Ace":
-            pass # add insurance later
-    # if dealer visible card = ace:
-    # offer insurance
-    # peek for blackjack
-    # if dealer has blackjack -> end round
-    # resolve insurance
-    # otherwise continue with game
-
-    # if dealer has blackjack -> end round
     if check_blackjack(dealer_hand):
         clear()
+
         print("Dealer's Hand:")
         render_hand(dealer_hand)
         print("\nYour Hand:")
