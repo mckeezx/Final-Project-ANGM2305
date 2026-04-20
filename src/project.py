@@ -483,7 +483,7 @@ def animate_money(old, new):
     else:
         step = -5
 
-    for x in range of (old, new + step, step):
+    for x in range(old, new + step, step):
         clear()
         print(f"Bankroll: ${x}")
         time.sleep(0.02)
@@ -584,7 +584,7 @@ def play_round(deck, money):
         # if player also has blackjack, tie
         else:
             print("\nThe Dealer has blackjack. You lose.")
-            money -= bet
+            money = update_money(money, -bet)
         time.sleep(2)
         return money
 
@@ -619,7 +619,7 @@ def play_round(deck, money):
         render_hand(player_hand)
         print(f"\nThe Dealer had a score of {calc_score(dealer_hand)}")
         print("\nYou busted. Round over.")
-        money -= bet
+        money = update_money(money, -bet)
         time.sleep(2)
         return money
     
@@ -644,15 +644,11 @@ def play_round(deck, money):
     print(f"Your Score: {calc_score(player_hand)}")
 
     if result == "win":
-        old = money
-        money += bet
-        animate_money(old, money)
         print(f"\n{Color.GREEN}You win the round. +${bet}{Color.RESET}")
+        money = update_money(money, bet)
     elif result == "lose":
-        starting_money = money
-        money += bet
-        animate_money(old, money)
         print(f"\n{Color.RED}You lose the round. -${bet}{Color.RESET}")
+        money = update_money(money, -bet)
     else:
         print(f"\nPush. You keep your ${bet}.")
 
