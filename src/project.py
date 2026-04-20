@@ -313,9 +313,16 @@ def player_turn(deck, hand, dealer_hand):
 
         # ask them to hit or stand
         
-        action = input("What do you do? ").lower()
+        action = input("What do you do? (hit/stand/double/surrender)").lower()
 
         # if hit, deal a card
+
+        if action == "surrender" and len(hand) == 2:
+            print("You surrender. Half your bet is returned.")
+            return "surrender"
+        elif action == "surrender":
+            print("You can only surrender on your first turn.")
+    
 
         if action == "hit":
             print("You draw a card.")
@@ -327,7 +334,7 @@ def player_turn(deck, hand, dealer_hand):
             return hand
         
         elif action == "quit":
-            quit()
+            quit()        
 
         else: 
             print("Invalid input.")
