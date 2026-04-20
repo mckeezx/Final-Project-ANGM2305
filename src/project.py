@@ -503,10 +503,21 @@ def play_round(deck, money):
     # resolve insurance
     # otherwise continue with game
 
-    # if dealer visible card = 10/j/q/k:
-    # peek for blackjack
     # if dealer has blackjack -> end round
-    # otherwise continue with game
+    if check_blackjack(dealer_hand):
+        clear()
+        print("Dealer's Hand:")
+        render_hand(dealer_hand)
+        print("\nYour Hand:")
+        render_hand(player_hand)
+        if check_blackjack(player_hand):
+            print("\nThe Dealer has blackjack. Push.")
+        # if player also has blackjack, tie
+        else:
+            print("\nThe Dealer has blackjack. You lose.")
+            money -= bet
+        time.sleep(3)
+        return money
 
 
     if check_blackjack(player_hand):
