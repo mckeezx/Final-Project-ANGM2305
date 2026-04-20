@@ -27,12 +27,14 @@ class Color:
     YELLOW = "\033[0;93m"
     # GREEN - WIN
     GREEN = "\033[0;92m"
-    # CYAN - ACTIONS
+    # CYAN - HIT
     CYAN = "\033[0;96m"
     # BOLD - IMPORTANT
     BOLD = "\033[1m"
     # RESET - CLEAN TEXT
     RESET = "\033[0m"
+    # PURPLE - STAND
+    PURPLE = "\033[0;95m"
 
 # Game Loop 
 # Player starts with $100 
@@ -247,6 +249,9 @@ def render_card(card, hidden=False):
     # set variable for turning card's suit into a symbol
     suit = symbols[card[1]]
 
+    if card[1] in ["Hearts", "Diamonds"]:
+        suit = Color.RED + suit + Color.RESET
+
     # 10 is two characters wide so fix alignment
     if value == "10":
         top = f"│ 10      │"
@@ -328,7 +333,7 @@ def player_turn(deck, hand, dealer_hand):
             return hand 
         
         if score == 21:
-            print("21! Standing automatically.")
+            print(f"{Color.YELLOW}21!{Color.PURPLE} Standing automatically.{Color.RESET}")
             time.sleep(1)
             return hand
 
@@ -358,7 +363,7 @@ def player_turn(deck, hand, dealer_hand):
 
         # if stand, end turn and break loop
         elif action == "stand":
-            print("You stand.")
+            print(f"{Color.PURPLE}You stand.{Color.RESET}")
             return hand
         
         elif action == "quit":
@@ -406,7 +411,7 @@ def dealer_turn(deck, hand, player_hand):
         
         # if score is more than 17, stand
         elif score >= 17:
-            print("The Dealer stands.")
+            print(f"{Color.PURPLE}The Dealer stands.{Color.RESET}")
             time.sleep(1.5)
             return hand
         
@@ -475,7 +480,7 @@ def play_round(deck, money):
     """
     clear()
     print("· ♤ · ♡ · New Round · ♢ · ♧ ·")
-    print("Current money:", "$"money)
+    print("Current money:", "$",money)
 
     if len(deck) < 52:
         print("Reshuffling...")
