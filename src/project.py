@@ -313,7 +313,7 @@ def player_turn(deck, hand, dealer_hand):
 
         # ask them to hit or stand
         
-        action = input("What do you do? (hit/stand/double/surrender)").lower()
+        action = input("What do you do? (hit/stand/double/surrender) ").lower()
 
         # if hit, deal a card
 
@@ -511,6 +511,8 @@ def play_round(deck, money):
         print(f"You keep ${bet//2}.")
         time.sleep(3)
         return money
+    
+    player_hand = result
     
 
     
