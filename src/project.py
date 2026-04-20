@@ -488,6 +488,22 @@ def play_round(deck, money):
     score = calc_score(player_hand)
     print("Your Score:", score)
 
+    # dealer peeking mechanic
+    # if the card is an ace / 10 value, the dealer will peek for nat blackjack
+
+    # if dealer visible card = ace:
+    # offer insurance
+    # peek for blackjack
+    # if dealer has blackjack -> end round
+    # resolve insurance
+    # otherwise continue with game
+
+    # if dealer visible card = 10/j/q/k:
+    # peek for blackjack
+    # if dealer has blackjack -> end round
+    # otherwise continue with game
+
+
     if check_blackjack(player_hand):
         time.sleep(1)
         print("Blackjack!")
