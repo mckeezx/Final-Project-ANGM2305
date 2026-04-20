@@ -488,7 +488,6 @@ def play_round(deck, money):
     # player turn
     player_hand = player_turn(deck, player_hand, dealer_hand)
 
-
     if calc_score(player_hand) > 21:
         clear()
         print("Dealer's Hand:")
@@ -500,7 +499,18 @@ def play_round(deck, money):
         money -= bet
         time.sleep(4)
         return money
+    
+    if result == "surrender":
+        clear()
+        print("You surrendered.")
+        # return half the money
+        money -= bet // 2
+        print(f"You keep ${bet//2}.")
+        time.sleep(3)
+        return money
+    
 
+    
     # dealer turn
 
     dealer_hand = dealer_turn(deck, dealer_hand, player_hand)
