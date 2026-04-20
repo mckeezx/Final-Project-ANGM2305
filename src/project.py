@@ -480,7 +480,7 @@ def play_round(deck, money):
     """
     clear()
     print("· ♤ · ♡ · New Round · ♢ · ♧ ·")
-    print("Current money:", "$",money)
+    print(f"Current money: ${money}")
 
     if len(deck) < 52:
         print("Reshuffling...")
@@ -613,7 +613,12 @@ def play_round(deck, money):
             time.sleep(0.02)
         print(f"\n{Color.GREEN}You win the round. +${bet}{Color.RESET}")
     elif result == "lose":
-        money -= bet
+        starting_money = money
+        money += bet
+        for x in range(starting_money, money - 1, 5):
+            clear()
+            print(f"Bankroll: ${x}")
+            time.sleep(0.02)
         print(f"\n{Color.RED}You lose the round. -${bet}{Color.RESET}")
     else:
         print(f"\nPush. You keep your ${bet}.")
