@@ -352,7 +352,8 @@ def dealer_turn(deck, hand, player_hand):
         clear()
 
         score = calc_score(hand)
-
+        print(f"The Dealer reveals: {card_format(hand[0])}")
+        print(f"Leading to a score of: {calc_score(hand)}")
         print("\nDealer's Hand:")
         render_hand(hand)
         print("\nYour Hand:")
