@@ -78,7 +78,10 @@ def title_screen():
     #clear screen
     #make bold title
     #print press to start
-    
+    clear()
+    print(f"{Color.BOLD}♠ ♥ BLACKJACK: SIMPLIFIED ♦ ♣{Color.RESET}")
+    print("\nPress enter to start.")
+    input()
 
 
 
