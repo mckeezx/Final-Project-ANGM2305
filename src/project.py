@@ -501,6 +501,11 @@ def update_money(money, change):
     """
     # set old = money, money added to change, animate, return
 
+    old = money
+    money += change
+    animate_money(old, money)
+    return money
+
 
 def play_round(deck, money):
     """ 
