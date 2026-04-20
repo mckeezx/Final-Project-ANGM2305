@@ -333,6 +333,7 @@ def player_turn(deck, hand, dealer_hand):
         if action == "hit":
             print("You draw a card.")
             hand.append(deal_card(deck))
+            time.sleep(0.6)
 
         # if stand, end turn and break loop
         elif action == "stand":
@@ -362,7 +363,7 @@ def dealer_turn(deck, hand, player_hand):
 
     print(f"The Dealer reveals: {card_format(hand[0])}")
     print(f"Leading to a score of: {calc_score(hand)}")
-    time.sleep(2)
+    time.sleep(1.2)
 
     while True:
         time.sleep(1) 
@@ -494,7 +495,7 @@ def play_round(deck, money):
     peek_trigger = ["Ace", "10", "Jack", "Queen", "King"]
 
     if dealer_visible[0] in peek_trigger:
-        if dealer_visible == "Ace":
+        if dealer_visible[0] == "Ace":
             pass # add insurance later
     # if dealer visible card = ace:
     # offer insurance
@@ -516,7 +517,7 @@ def play_round(deck, money):
         else:
             print("\nThe Dealer has blackjack. You lose.")
             money -= bet
-        time.sleep(3)
+        time.sleep(2)
         return money
 
 
@@ -524,7 +525,7 @@ def play_round(deck, money):
         time.sleep(1)
         print("Blackjack!")
         money += int(bet * 1.5) # 3:2 payout for nat blackjack in Vegas
-        time.sleep(3)
+        time.sleep(2)
         return money
 
     # player turn
@@ -537,7 +538,7 @@ def play_round(deck, money):
         # return half the money
         money -= bet // 2
         print(f"You keep ${bet//2}.")
-        time.sleep(3)
+        time.sleep(2)
         return money
     
     player_hand = result
@@ -551,7 +552,7 @@ def play_round(deck, money):
         print(f"\nThe Dealer had a score of {calc_score(dealer_hand)}")
         print("\nYou busted. Round over.")
         money -= bet
-        time.sleep(4)
+        time.sleep(2)
         return money
     
     
@@ -584,7 +585,7 @@ def play_round(deck, money):
         print(f"\nPush. You keep your ${bet}.")
 
 
-    time.sleep(4)
+    time.sleep(2)
     return money
 
 
