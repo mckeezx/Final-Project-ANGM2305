@@ -10,6 +10,12 @@ window.geometry("960x540")
 # black bkg
 window.configure(bg="black")
 
+# Game state
+# create deck
+# player hand and dealer hand create list
+# money is 500
+# bet curerntly at 0
+
 #display set up 
 display = tk.Text(
     window,
