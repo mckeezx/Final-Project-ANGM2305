@@ -60,7 +60,10 @@ def update_display(text)
         for row in zip(*[render_card(c) for c in player_hand]):
             board += "  ".join(row) + "\n"
         # show score, money, bet
+        board += f"\nYour Score: {calc_score(player_hand)}"
+        board += f"\nMoney: ${money}  |  Bet: ${bet}"
         # update display
+        update_display(board)
 
 
 #display set up 
