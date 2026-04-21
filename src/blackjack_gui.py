@@ -140,10 +140,19 @@ def stand():
     Output:
     - Stand
     """
-    # show dealers hand
+    global dealer_hand, money, bet
     # while dealer is less than 17, draw card
+    while calc_score(dealer_hand) < 17:
+        dealer_hand.append(deal_card(deck))
+
+    draw_board()
+
     # compare hands 
+    result = compare_hands(player_hand, dealer_hand)
     #if win, win
+    if result == "win":
+        money += bet
+        update_display
     #lose, lose
     # else it's tie
     # disable the buttons
