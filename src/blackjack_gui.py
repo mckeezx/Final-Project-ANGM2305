@@ -50,7 +50,11 @@ def update_display(text)
         """
         # variables to read: render_card, dealer_hand, player_hand, calc_score, money, bet
         # create empty board string
+        board = ""
         # add Dealer's hand
+        board += "Dealer's hand:\n"
+        for row in zip(*[render_card(c, hidden(i==0)) for i, c in enumerate(dealer_hand)]):
+            board += "  ".join(row) + "\n"
         # do same for player's hand
         # show score, money, bet
         # update display
