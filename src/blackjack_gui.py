@@ -82,10 +82,24 @@ def hit():
     """
     Player can draw a card
     
+    Output:
+    - add card to player hand
     """
     global player_hand
     player_hand.append(deal_card(deck))
     draw_board()
+
+def surrender():
+    """
+    Player can surrender, getting half their money back
+
+    Output:
+    - Money bet on round divided by 2
+    
+    """
+    global money, bet
+    money -= bet // 2
+    update_display(f"You surrendered. You keep ${bet // 2}.\nMoney: ${money}")
 
 
 #display set up 
