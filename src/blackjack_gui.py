@@ -125,11 +125,11 @@ button_frame = tk.Frame(window, bg="black")
 # pack frame into block
 button_frame.pack()
 # hit button 
-hit_button = tk.Button(button_frame, text="Hit", width=10, bg="gray", fg="white")
+hit_button = tk.Button(button_frame, text="Hit", width=10, bg="gray", fg="white", command=hit)
 # stand button
-stand_button = tk.Button(button_frame, text="Stand", width=10, bg="gray", fg="white")
+stand_button = tk.Button(button_frame, text="Stand", width=10, bg="gray", fg="white", command=stand)
 # surrender button
-surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg="gray", fg="white")
+surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg="gray", fg="white", command=surrender)
 # all buttons will be their own frame with white text gray bg 
 # use grid format to format them
 hit_button.grid(row=0, column=0, padx=5)
