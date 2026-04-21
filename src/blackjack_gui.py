@@ -12,9 +12,14 @@ window.configure(bg="black")
 
 # Game state
 # create deck
+deck = create_deck()
 # player hand and dealer hand create list
+player_hand = []
+dealer_hand = []
 # money is 500
+money = 500
 # bet curerntly at 0
+bet = 0
 
 #display set up 
 display = tk.Text(
