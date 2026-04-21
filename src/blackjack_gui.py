@@ -101,6 +101,15 @@ def surrender():
     money -= bet // 2
     update_display(f"You surrendered. You keep ${bet // 2}.\nMoney: ${money}")
 
+def stand():
+    """
+    Player can stand, ending their turn
+    
+    Output:
+    - Stand
+    """
+    pass
+
 
 #display set up 
 display = tk.Text(
