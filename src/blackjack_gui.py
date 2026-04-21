@@ -64,6 +64,20 @@ def draw_board():
     # update display
     update_display(board)
 
+def new_round():
+    """
+    Plays a new round of blackjack.
+    
+    
+    """
+    global player_hand, dealer_hand, bet # global modifies variable outside function
+
+    player_hand = [deal_card(deck), deal_card(deck)]
+    dealer_hand = [deal_card(deck), deal_card(deck)]
+
+    draw_board()
+
+    
 
 
 
@@ -100,5 +114,12 @@ surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg="gray"
 hit_button.grid(row=0, column=0, padx=5)
 stand_button.grid(row=0, column=1, padx=5)
 surrender_button.grid(row=0, column=2, padx=5)
+
+
+
+bet = 15  
+new_round()
+
+window.mainloop()
 
 window.mainloop()
