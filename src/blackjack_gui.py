@@ -97,9 +97,12 @@ bet_label.grid(row=0, column=0)
 bet_input = tk.Entry(bet_frame, width=10, bg="gray", fg="white", font=("Courier", 12))
 # one column down, padx5
 bet_input.grid(row=0, column=1, padx=5)
+# can take the code with bet_input.get()
 
 # deal button some stats
+deal_button = tk.Button(bet_frame, text="Deal", width=10, bg="gray", fg="white", command=place_bet)
 # column 2 padx 5
+deal_button.grid(row=0, column=2, padx=5)
 
 
 def disable_buttons():
