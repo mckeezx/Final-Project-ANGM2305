@@ -34,6 +34,8 @@ button_frame.pack()
 # hit button 
 hit_button = tk.Button(button_frame, text="Hit", width=10, bg="gray", fg="white")
 # stand button
+stand_button = tk.Button(button_frame, text="Stand", width=10, bg="gray", fg="white")
 # surrender button
+surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg="gray", fg="white")
 # all buttons will be their own frame with white text gray bg 
 # use grid format to format them
