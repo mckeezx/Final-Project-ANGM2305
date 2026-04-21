@@ -65,7 +65,7 @@ def draw_board_string():
     return board
 
 def draw_board():
-    update_display(draw_board_string())
+    update_display(draw_board_string(hide_dealer=True))
 
 def new_round():
     """
@@ -79,6 +79,21 @@ def new_round():
     dealer_hand = [deal_card(deck), deal_card(deck)]
 
     draw_board()
+
+
+# bet input time
+# black bg frame
+# pack it
+
+# bet label black bg green fg courier font 
+# 0,0
+
+# bet input same stats kinda
+# one column down, padx5
+
+# deal button some stats
+# column 2 padx 5
+
 
 def disable_buttons():
     """
