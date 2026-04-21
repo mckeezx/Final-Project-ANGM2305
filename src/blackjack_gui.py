@@ -32,9 +32,28 @@ def update_display(text)
     - text written to window
     """
     #set display state to normal
+    display.config(state="normal")
     #clear screen
+    display.delete("1.0", "end")
     #write text
+    display.insert("end", text)
     #set display state to disabled
+    display.config(state="disabled")
+
+
+    def draw_board():
+        """
+        Render cards, show player/dealer hand, show money, your bet, score
+        
+        Output:
+        - Render stuff to window
+        """
+        # variables to read: render_card, dealer_hand, player_hand, calc_score, money, bet
+        # create empty board string
+        # add Dealer's hand
+        # do same for player's hand
+        # show score, money, bet
+        # update display
 
 
 #display set up 
