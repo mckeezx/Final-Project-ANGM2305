@@ -21,7 +21,7 @@ money = 500
 # bet curerntly at 0
 bet = 0
 
-def update_display(text)
+def update_display(text):
     """
     Enables window to be written in, writes text, then disables it again.
 
@@ -40,30 +40,31 @@ def update_display(text)
     #set display state to disabled
     display.config(state="disabled")
 
-
-    def draw_board():
-        """
-        Render cards, show player/dealer hand, show money, your bet, score
+def draw_board():
+    """
+    Render cards, show player/dealer hand, show money, your bet, score
         
-        Output:
-        - Render stuff to window
-        """
-        # variables to read: render_card, dealer_hand, player_hand, calc_score, money, bet
-        # create empty board string
-        board = ""
-        # add Dealer's hand
-        board += "Dealer's hand:\n"
-        for row in zip(*[render_card(c, hidden(i==0)) for i, c in enumerate(dealer_hand)]):
-            board += "  ".join(row) + "\n"
+    Output:
+    - Render stuff to window
+    """
+    # variables to read: render_card, dealer_hand, player_hand, calc_score, money, bet
+    # create empty board string
+    board = ""
+    # add Dealer's hand
+    board += "Dealer's hand:\n"
+    for row in zip(*[render_card(c, hidden(i==0)) for i, c in enumerate(dealer_hand)]):
+        board += "  ".join(row) + "\n"
         # do same for player's hand
-        board += "\nYour Hand:\n"
-        for row in zip(*[render_card(c) for c in player_hand]):
-            board += "  ".join(row) + "\n"
+    board += "\nYour Hand:\n"
+    for row in zip(*[render_card(c) for c in player_hand]):
+        board += "  ".join(row) + "\n"
         # show score, money, bet
-        board += f"\nYour Score: {calc_score(player_hand)}"
-        board += f"\nMoney: ${money}  |  Bet: ${bet}"
-        # update display
-        update_display(board)
+    board += f"\nYour Score: {calc_score(player_hand)}"
+    board += f"\nMoney: ${money}  |  Bet: ${bet}"
+    # update display
+    update_display(board)
+
+
 
 
 #display set up 
