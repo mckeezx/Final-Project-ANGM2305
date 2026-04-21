@@ -12,16 +12,17 @@ window.configure(bg="black")
 
 #display set up 
 display = tk.Text(
-# bkg black
-bg = "black",
-# fg green
-fg = "green",
-# courier font
-font=("Courier", 12),
-# disabled state so no typing
-state = "disabled"
-width = 100
-height = 100
+    window,
+    # bkg black
+    bg = "black",
+    # fg green
+    fg = "green",
+    # courier font
+    font = ("Courier", 12),
+    # disabled state so no typing
+    state = "disabled",
+    width = 80,
+    height = 25
 )
 # display pack pady=10
 display.pack(pady=10) # 10 pixel padding top and bottom
@@ -39,3 +40,8 @@ stand_button = tk.Button(button_frame, text="Stand", width=10, bg="gray", fg="wh
 surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg="gray", fg="white")
 # all buttons will be their own frame with white text gray bg 
 # use grid format to format them
+hit_button.grid(row=0, column=0, padx=5)
+stand_button.grid(row=0, column=1, padx=5)
+surrender_button.grid(row=0, column=2, padx=5)
+
+window.mainloop()
