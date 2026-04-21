@@ -52,7 +52,7 @@ def draw_board():
     board = ""
     # add Dealer's hand
     board += "Dealer's hand:\n"
-    for row in zip(*[render_card(c, hidden(i==0)) for i, c in enumerate(dealer_hand)]):
+    for row in zip(*[render_card(c, hidden=(i==0)) for i, c in enumerate(dealer_hand)]):
         board += "  ".join(row) + "\n"
         # do same for player's hand
     board += "\nYour Hand:\n"

@@ -13,29 +13,6 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-class Color:
-    """ 
-    Manipulate text color using ANSI color codes.
-
-    Output: 
-    - Colors
-    """
-    # SOURCE: https://gist.github.com/JBlond/2fea43a3049b38287e5e9cefc87b2124
-    # RED - LOSE 
-    RED = "\033[0;91m"
-    # YELLOW - BLACKJACK 
-    YELLOW = "\033[0;93m"
-    # GREEN - WIN
-    GREEN = "\033[0;92m"
-    # CYAN - HIT
-    CYAN = "\033[0;96m"
-    # BOLD - IMPORTANT
-    BOLD = "\033[1m"
-    # RESET - CLEAN TEXT
-    RESET = "\033[0m"
-    # PURPLE - STAND
-    PURPLE = "\033[0;95m"
-
 # Game Loop 
 # Player starts with $100 
 # If money is more than $0 and less than $300 play a round (Core)
@@ -79,7 +56,7 @@ def title_screen():
     #make bold title
     #print press to start
     clear()
-    print(f"{Color.BOLD}♠ ♥ BLACKJACK: SIMPLIFIED ♦ ♣{Color.RESET}")
+    print(f"♠ ♥ BLACKJACK: SIMPLIFIED ♦ ♣")
     print(f"\nCreated by: Zachary McKee")
     print(f"ANGM 2305 - Final Project")
     print("\nPress enter to start.")
@@ -266,9 +243,6 @@ def render_card(card, hidden=False):
     # set variable for turning card's suit into a symbol
     suit = symbols[card[1]]
 
-    if card[1] in ["Hearts", "Diamonds"]:
-        suit = Color.RED + suit + Color.RESET
-
     # 10 is two characters wide so fix alignment
     if value == "10":
         top = f"│ 10      │"
@@ -350,7 +324,7 @@ def player_turn(deck, hand, dealer_hand):
             return hand 
         
         if score == 21:
-            print(f"{Color.YELLOW}21!{Color.PURPLE} Standing automatically.{Color.RESET}")
+            print(f"21! Standing automatically.")
             time.sleep(1)
             return hand
 
@@ -374,13 +348,13 @@ def player_turn(deck, hand, dealer_hand):
     
 
         if action == "hit":
-            print(f"{Color.CYAN}You draw a card.{Color.RESET}")
+            print(f"You draw a card.")
             hand.append(deal_card(deck))
             time.sleep(0.6)
 
         # if stand, end turn and break loop
         elif action == "stand":
-            print(f"{Color.PURPLE}You stand.{Color.RESET}")
+            print(f"You stand.")
             return hand
         
         elif action == "quit":
@@ -428,13 +402,13 @@ def dealer_turn(deck, hand, player_hand):
         
         # if score is more than 17, stand
         elif score >= 17:
-            print(f"{Color.PURPLE}The Dealer stands.{Color.RESET}")
+            print(f"The Dealer stands.")
             time.sleep(1.5)
             return hand
         
         # else, hit and draw a card
         else:
-            print(f"{Color.CYAN}The Dealer draws...{Color.RESET}")
+            print(f"The Dealer draws...")
             time.sleep(.8)
             hand.append(deal_card(deck))
 
@@ -598,7 +572,7 @@ def play_round(deck, money):
 
     if check_blackjack(player_hand):
         time.sleep(1)
-        print(f"{Color.YELLOW}{Color.BOLD}Blackjack!{Color.RESET}")
+        print(f"Blackjack!")
         money += int(bet * 1.5) # 3:2 payout for nat blackjack in Vegas
         time.sleep(2)
         return money
@@ -651,11 +625,11 @@ def play_round(deck, money):
     print(f"Your Score: {calc_score(player_hand)}")
 
     if result == "win":
-        print(f"\n{Color.GREEN}You win the round. +${bet}{Color.RESET}")
+        print(f"\nYou win the round. +${bet}")
         time.sleep(2)
         money = update_money(money, bet)
     elif result == "lose":
-        print(f"\n{Color.RED}You lose the round. -${bet}{Color.RESET}")
+        print(f"\nYou lose the round. -${bet}")
         time.sleep(2)
         money = update_money(money, -bet)
     else:
