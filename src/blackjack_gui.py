@@ -91,11 +91,17 @@ def hit():
 
     # bust checking
     # calc score > 21
-    # update display saying u bust
-    # disable buttons
+    if calc_score(player_hand) > 21:
+        # update display saying u bust
+        update_display("You bust! Round over.")
+        # disable buttons
+        disable_buttons()
 
     # else if == 21, stand automatically
-    # disable buttons
+    elif calc_score(player_hand) == 21:
+        update_display("21! Standing Automatically.")
+        # disable buttons
+        disable_buttons()
 
 def surrender():
     """
