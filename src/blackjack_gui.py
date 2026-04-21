@@ -78,7 +78,14 @@ def new_round():
     draw_board()
 
     
-
+def hit():
+    """
+    Player can draw a card
+    
+    """
+    global player_hand
+    player_hand.append(deal_card(deck))
+    draw_board()
 
 
 #display set up 
@@ -116,10 +123,5 @@ stand_button.grid(row=0, column=1, padx=5)
 surrender_button.grid(row=0, column=2, padx=5)
 
 
-
-bet = 15  
-new_round()
-
-window.mainloop()
 
 window.mainloop()
