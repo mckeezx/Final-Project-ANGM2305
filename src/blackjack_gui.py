@@ -104,6 +104,27 @@ deal_button = tk.Button(bet_frame, text="Deal", width=10, bg="gray", fg="white",
 # column 2 padx 5
 deal_button.grid(row=0, column=2, padx=5)
 
+def place_bet():
+    """
+    Tries to take what player typed and read it as an integer.
+    
+    Output:
+    - player bet
+    """
+    global bet
+    try:
+        bet = int(bet_entry.get())
+        if bet < 15:
+            update_display("Minimum bet is $15.")
+        elif bet < 100:
+            update_display("Minimum bet is $100.")
+        elif bet > money:
+            update_display("You only have ${money}.")
+        else:
+            new_round()
+            enable_buttons()
+    except ValueError:
+        update_display("Please enter a number.")
 
 def disable_buttons():
     """
