@@ -82,6 +82,9 @@ def disable_buttons():
     Disables buttons from being pressed.
     """
     # set hit/stand/surrender button state to disable
+    hit_button.config(state="disabled")
+    stand_button.config(state="disabled")
+    surrender_button.config(state="disabled")
     
 
 def enable_buttons():
@@ -89,6 +92,9 @@ def enable_buttons():
     Enables buttons from being pressed.
     """
     # set hit/stand/surrender button state to normal
+    hit_button.config(state="normal")
+    stand_button.config(state="normal")
+    surrender_button.config(state="normal")
 
 def hit():
     """
