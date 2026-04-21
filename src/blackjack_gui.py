@@ -40,7 +40,7 @@ def update_display(text):
     #set display state to disabled
     display.config(state="disabled")
 
-def draw_board():
+def draw_board_string():
     """
     Render cards, show player/dealer hand, show money, your bet, score
         
@@ -62,7 +62,10 @@ def draw_board():
     board += f"\nYour Score: {calc_score(player_hand)}"
     board += f"\nMoney: ${money}  |  Bet: ${bet}"
     # update display
-    update_display(board)
+    return board
+
+def draw_board():
+    update_display(draw_board_string())
 
 def new_round():
     """
