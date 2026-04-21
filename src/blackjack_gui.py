@@ -155,7 +155,7 @@ def stand():
     #if win, win
     if result == "win":
         money += bet
-        update_display
+        update_display(draw_board_string() + f"\nYou win! +${bet}  |  Money: ${money}")
     #lose, lose
     # else it's tie
     # disable the buttons
