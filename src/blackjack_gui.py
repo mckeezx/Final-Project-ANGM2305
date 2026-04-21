@@ -56,6 +56,9 @@ def update_display(text)
         for row in zip(*[render_card(c, hidden(i==0)) for i, c in enumerate(dealer_hand)]):
             board += "  ".join(row) + "\n"
         # do same for player's hand
+        board += "\nYour Hand:\n"
+        for row in zip(*[render_card(c) for c in player_hand]):
+            board += "  ".join(row) + "\n"
         # show score, money, bet
         # update display
 
