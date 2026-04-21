@@ -4,8 +4,11 @@ from project import create_deck, deal_card, calc_score, check_blackjack, compare
 
 # window set up
 # tk.Tk()
+window = tk.Tk() #creates window
 # 960x540
+window.geometry("960x540")
 # black bkg
+window.configure(bg="black")
 
 #display set up 
 # bkg black
