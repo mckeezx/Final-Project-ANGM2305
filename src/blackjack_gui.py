@@ -83,13 +83,20 @@ def new_round():
 
 # bet input time
 # black bg frame
+bet_frame = tk.Frame(window, bg="black")
 # pack it
+bet_frame.pack()
 
 # bet label black bg green fg courier font 
+bet_label = tk.Label(bet_frame, text="Bet: $", bg="black", fg="green", font=("Courier", 12))
+# it jsuts says "bet", nothing else
 # 0,0
+bet_label.grid(row=0, column=0)
 
 # bet input same stats kinda
+bet_input = tk.Entry(bet_frame, width=10, bg="gray", fg="white", font=("Courier", 12))
 # one column down, padx5
+bet_input.grid(row=0, column=1, padx=5)
 
 # deal button some stats
 # column 2 padx 5
