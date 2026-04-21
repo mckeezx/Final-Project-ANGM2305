@@ -140,7 +140,13 @@ def stand():
     Output:
     - Stand
     """
-    pass
+    # show dealers hand
+    # while dealer is less than 17, draw card
+    # compare hands 
+    #if win, win
+    #lose, lose
+    # else it's tie
+    # disable the buttons
 
 
 #display set up 
