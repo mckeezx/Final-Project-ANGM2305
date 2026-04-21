@@ -21,6 +21,22 @@ money = 500
 # bet curerntly at 0
 bet = 0
 
+def update_display(text)
+    """
+    Enables window to be written in, writes text, then disables it again.
+
+    Input:
+    - Text: text needed to be written
+    
+    Output:
+    - text written to window
+    """
+    #set display state to normal
+    #clear screen
+    #write text
+    #set display state to disabled
+
+
 #display set up 
 display = tk.Text(
     window,
