@@ -89,6 +89,14 @@ def hit():
     player_hand.append(deal_card(deck))
     draw_board()
 
+    # bust checking
+    # calc score > 21
+    # update display saying u bust
+    # disable buttons
+
+    # else if == 21, stand automatically
+    # disable buttons
+
 def surrender():
     """
     Player can surrender, getting half their money back
