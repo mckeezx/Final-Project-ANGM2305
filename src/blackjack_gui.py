@@ -77,7 +77,19 @@ def new_round():
 
     draw_board()
 
+def disable_buttons():
+    """
+    Disables buttons from being pressed.
+    """
+    # set hit/stand/surrender button state to disable
     
+
+def enable_buttons():
+    """
+    Enables buttons from being pressed.
+    """
+    # set hit/stand/surrender button state to normal
+
 def hit():
     """
     Player can draw a card
