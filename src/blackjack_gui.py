@@ -28,8 +28,11 @@ display.pack(pady=10) # 10 pixel padding top and bottom
 
 #button set up
 # tk.Frame, same bg
+button_frame = tk.Frame(window, bg="black")
 # pack frame into block
+button_frame.pack()
 # hit button 
+hit_button = tk.Button(button_frame, text="Hit", width=10, bg="gray", fg="white")
 # stand button
 # surrender button
 # all buttons will be their own frame with white text gray bg 
