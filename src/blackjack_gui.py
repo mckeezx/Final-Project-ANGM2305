@@ -330,6 +330,6 @@ tk.Label(title_frame, text="Starting money: $500  |  Get to $1500 to win.",
 tk.Button(title_frame, text="Start Game", width=15, bg="gray", fg="white",
           font=("Courier", 12), command=start_game).pack(pady=20)
 
-
+update_display("Welcome. Place your bet and click Deal to play.")
 
 window.mainloop()
