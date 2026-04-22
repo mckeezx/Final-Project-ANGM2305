@@ -25,25 +25,7 @@ def start_game():
     """
     Starts the game by destroying the title frame.
     """
-    title_frame.destroy()
-
-
-
-# title frame, black bg
-title_frame = tk.Frame(window, bg="black")
-title_frame =(relx=0, rely=0, relwidth=1, relheight=1)
-# take up 100% of the window using relwidth and relheight (percentage based)
-
-# give it a title
-tk.Label(title_frame, text="Vegas Strip Blackjack",
-         bg="black", fg="green", font=("Courier", 24, "bold")).pack(pady=150)
-# give it a label under it
-tk.Label(title_frame, text="Starting money: $500  |  Get to $1500 to win.", 
-         bg="black", fg="green", font=("Courier", 12)).pack()
-# give it a button that when clicked deletes the frame
-tk.Button(title_frame, text="Start Game", width=15, bg="gray", fg="white",
-          font=("Courier", 12), 
-          
+    title_frame.destroy()          
 
 def update_display(text):
     """
@@ -323,6 +305,22 @@ bet_input.grid(row=0, column=1, padx=5)
 deal_button = tk.Button(bet_frame, text="Deal", width=10, bg="gray", fg="white", command=place_bet)
 # column 2 padx 5
 deal_button.grid(row=0, column=2, padx=5)
+
+# title frame, black bg
+# needs to be on bottom because it uses .place, which means it's generated on top of everything
+title_frame = tk.Frame(window, bg="black")
+title_frame.place(relx=0, rely=0, relwidth=1, relheight=1)
+# take up 100% of the window using relwidth and relheight (percentage based)
+
+# give it a title
+tk.Label(title_frame, text="Vegas Strip Blackjack",
+         bg="black", fg="green", font=("Courier", 24, "bold")).pack(pady=150)
+# give it a label under it
+tk.Label(title_frame, text="Starting money: $500  |  Get to $1500 to win.", 
+         bg="black", fg="green", font=("Courier", 12)).pack()
+# give it a button that when clicked deletes the frame
+tk.Button(title_frame, text="Start Game", width=15, bg="gray", fg="white",
+          font=("Courier", 12), command=start_game).pack(pady=20)
 
 
 
