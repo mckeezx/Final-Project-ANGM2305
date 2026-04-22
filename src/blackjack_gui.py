@@ -332,4 +332,7 @@ tk.Button(title_frame, text="Start Game", width=15, bg="gray", fg="white",
 
 update_display("Welcome. Place your bet and click Deal to play.")
 
+# can use the hit/stand/surrender before even betting
+disable_buttons()
+
 window.mainloop()
