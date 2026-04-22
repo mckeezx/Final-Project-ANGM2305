@@ -5,6 +5,7 @@ from project import create_deck, deal_card, calc_score, check_blackjack, compare
 # window set up
 # tk.Tk()
 window = tk.Tk() #creates window
+window.title("Vegas Strip Blackjack")
 # 960x540
 window.geometry("960x540")
 # black bkg
