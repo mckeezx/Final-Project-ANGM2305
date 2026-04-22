@@ -82,6 +82,14 @@ def new_round():
 
     draw_board()
 
+    if check_blackjack(player_hand):
+        money_gotten = int(bet * 1.5)
+        global money
+        money += money_gotten
+        update_display(draw_board_string() + f"\nBlackjack! you win ${money_gotten}!  | 
+                       Money: ${money}"
+        disable_buttons()
+
 def place_bet():
     """
     Tries to take what player typed and read it as an integer.
