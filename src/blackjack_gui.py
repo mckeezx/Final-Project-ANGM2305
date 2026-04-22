@@ -57,6 +57,10 @@ def draw_board_string(hide_dealer=False):
     for row in zip(*[render_card(c, hidden=(hide_dealer and i==0)) for i, c in enumerate(dealer_hand)]):
         board += "  ".join(row) + "\n"
         # do same for player's hand
+    if hide_dealer:
+        board += "Dealer's Score: ?\n"
+    else:
+        board += f"Dealer's Score: {calc_score(dealer_hand)}\n"
     board += "\nYour Hand:\n"
     for row in zip(*[render_card(c) for c in player_hand]):
         board += "  ".join(row) + "\n"
