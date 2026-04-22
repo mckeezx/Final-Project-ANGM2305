@@ -73,6 +73,17 @@ def draw_board_string(hide_dealer=False):
 def draw_board():
     update_display(draw_board_string(hide_dealer=True))
 
+def reset():
+    """
+    Reset for next round.
+    """
+    # delete input in bet
+    bet_input.delete(0, "end")
+    # tell player to bet again
+    update_display("Place your bet and click Deal to play.")
+    # make deal button clickable
+    deal_button.config(state="normal")
+
 def new_round():
     """
     Plays a new round of blackjack.
@@ -159,6 +170,8 @@ def hit():
         # disable buttons
         check_game_over()
         disable_buttons()
+        # wait 4000 miliseconds, and then execute the function.
+        window.after(4000, reset)
 
     # else if == 21, stand automatically
     elif calc_score(player_hand) == 21:
@@ -179,6 +192,7 @@ def surrender():
     global money, bet
     money -= bet // 2
     update_display(f"You surrendered. You keep ${bet // 2}.\nMoney: ${money}")
+    window.after(4000, reset)
 
 def stand():
     """
@@ -208,6 +222,7 @@ def stand():
         # disable the buttons
     check_game_over()
     disable_buttons()
+    window.after(4000, reset)
     
 
 def check_game_over():
