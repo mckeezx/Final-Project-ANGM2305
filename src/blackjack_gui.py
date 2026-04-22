@@ -54,7 +54,7 @@ def draw_board_string(hide_dealer=False):
     board = ""
     # add Dealer's hand
     board += "Dealer's hand:\n"
-    for row in zip(*[render_card(c, hidden=(i==0)) for i, c in enumerate(dealer_hand)]):
+    for row in zip(*[render_card(c, hidden=(hide_dealer and i==0)) for i, c in enumerate(dealer_hand)]):
         board += "  ".join(row) + "\n"
         # do same for player's hand
     board += "\nYour Hand:\n"
@@ -86,8 +86,8 @@ def new_round():
         money_gotten = int(bet * 1.5)
         global money
         money += money_gotten
-        update_display(draw_board_string() + f"\nBlackjack! you win ${money_gotten}!  | 
-                       Money: ${money}"
+        message = f"\nBlackjack! you win ${money_gotten}!  | Money: ${money}"
+        update_display(draw_board_string() + message)
         disable_buttons()
 
 def place_bet():
@@ -148,7 +148,7 @@ def hit():
     # calc score > 21
     if calc_score(player_hand) > 21:
         # update display saying u bust
-        update_display(draw_board_string() + f"\nYou bust! Round over.  -${bet}")
+        update_display(draw_board_string() + f"\nYou bust! Round over. -${bet}")
         global money
         money -= bet
         # disable buttons
@@ -187,6 +187,14 @@ def stand():
         dealer_hand.append(deal_card(deck))
 
     draw_board()
+
+    def check_game_over():
+        """
+        check if there's a game over.
+        """
+        # if money < 0, lose
+        # if money > 1500, win
+        # else keep playing
 
     # compare hands 
     result = compare_hands(player_hand, dealer_hand)
