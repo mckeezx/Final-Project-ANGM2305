@@ -187,10 +187,24 @@ def stand():
     # while dealer is less than 17, draw card
     while calc_score(dealer_hand) < 17:
         dealer_hand.append(deal_card(deck))
-        check_game_over
-        
 
-    draw_board()
+    result = compare_hands(player_hand, dealer_hand)
+
+    
+    if result == "win":
+        money += bet
+        update_display(draw_board_string() + f"\nYou win! +${bet}  |  Money: ${money}")
+    elif result == "lose":
+        money -= bet
+        update_display(draw_board_string() + f"\nYou lose. -${bet}  |  Money: ${money}")
+        #lose, lose
+        # else it's tie
+    else: 
+        update_display(draw_board_string() + f"\nPush. You keep ${bet}  |  Money: ${money}")
+        # disable the buttons
+    check_game_over()
+    disable_buttons()
+    
 
 def check_game_over():
     """
@@ -208,22 +222,6 @@ def check_game_over():
         deal_button.config(state="disabled")
         return True
     return False
-
-    # compare hands 
-    result = compare_hands(player_hand, dealer_hand)
-    #if win, win
-    if result == "win":
-        money += bet
-        update_display(draw_board_string() + f"\nYou win! +${bet}  |  Money: ${money}")
-    elif result == "lose":
-        money -= bet
-        update_display(draw_board_string() + f"\nYou lose. -${bet}  |  Money: ${money}")
-    #lose, lose
-    # else it's tie
-    else: 
-        update_display(draw_board_string() + f"\nPush. You keep ${bet}  |  Money: ${money}")
-    # disable the buttons
-    disable_buttons()
 
 
 #display set up 
