@@ -203,7 +203,8 @@ def surrender():
     """
     global money, bet
     if len(player_hand) > 2:
-        update_display(draw_board_string(hide_dealer=True) + "\nCan only surrender on first turn.")
+        msg0 = "\nCan only surrender on first turn."
+        update_display(draw_board_string(hide_dealer=True) + msg0)
         return
     money -= bet // 2
     update_display(f"You surrendered. You keep ${bet // 2}.\nMoney: ${money}")
