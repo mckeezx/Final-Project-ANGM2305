@@ -170,9 +170,7 @@ def hit():
 
     # else if == 21, stand automatically
     elif calc_score(player_hand) == 21:
-        update_display("21! Standing Automatically.")
-        # disable buttons
-        disable_buttons()
+        stand()
     else:
         draw_board()
 
