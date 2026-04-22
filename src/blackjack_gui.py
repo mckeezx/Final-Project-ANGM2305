@@ -33,7 +33,9 @@ tk.Label(title_frame, text="Vegas Strip Blackjack",
 tk.Label(title_frame, text="Starting money: $500  |  Get to $1500 to win.", 
          bg="black", fg="green", font=("Courier", 12)).pack()
 # give it a button that when clicked deletes the frame
-
+tk.Button(title_frame, text="Start Game", width=15, bg="gray", fg="white",
+          font=("Courier", 12), 
+          
 
 def update_display(text):
     """
