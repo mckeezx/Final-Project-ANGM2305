@@ -10,7 +10,7 @@ Blackjack: Simplified
 [Github Repo: ](https://github.com/mckeezx/Final-Project-ANGM2305)
 
 ## Descrption:
-There are only 4 files in this repository. Proposal.md outlines what I had planned for my project, README.md presents what I have finished. project.py is the "brain" of my code, it handles all of the blackjack logic and such. blackjack_gui.py is the physical part of my code as I can't render to terminal, so I used tkinter to display my game. 
+There are only 4 files in this repository. **Proposal.md** outlines what I had planned for my project, **README.md** presents what I have finished. **project.py** is the "brain" of my code, it handles all of the blackjack logic and such. **blackjack_gui.py** is the physical part of my code, I used tkinter to display my game. What sucks is I can't read apparently because when the rules for the project said "no text based games" I was like oh they don't want choose your own adventure games because those are lazy, but it actually just meant no games created in the terminal/made with purely text. Oops.
 
 My project is an emulation of the card game Blackjack, where players bet on their hand, trying to not go past 21. Players play against the dealer, who is made up of a couple logic functions. The game uses **ASCII cards and buttons and frames as a way to implement UI design** into something as simple as tkinter. The game in it's current state can allow the player to play a normal round of blackjack. There are a few Vegas Strip Mechanics incorporated into this version, being **surrender** (give up your hand and receive half your bet back) and **dealer peeking** (if the dealer has a natural blackjack, the round is instantly over.)
 
