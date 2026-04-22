@@ -112,6 +112,7 @@ def disable_buttons():
     hit_button.config(state="disabled")
     stand_button.config(state="disabled")
     surrender_button.config(state="disabled")
+    deal_button.config(state="normal")
     
 
 def enable_buttons():
@@ -122,6 +123,7 @@ def enable_buttons():
     hit_button.config(state="normal")
     stand_button.config(state="normal")
     surrender_button.config(state="normal")
+    deal_button.config(state="disabled")
 
 def hit():
     """
