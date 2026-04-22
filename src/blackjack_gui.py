@@ -225,14 +225,14 @@ def stand():
     
     if result == "win":
         money += bet
-        update_display(draw_board_string() + f"\nYou win! +${bet}  |  Money: ${money}")
+        update_display(draw_board_string() + f"\n\n★ You win! +${bet}  |  Money: ${money} ★")
     elif result == "lose":
         money -= bet
-        update_display(draw_board_string() + f"\nYou lose. -${bet}  |  Money: ${money}")
+        update_display(draw_board_string() + f"\n\n★ You lose. -${bet}  |  Money: ${money} ★")
         #lose, lose
         # else it's tie
     else: 
-        update_display(draw_board_string() + f"\nPush. You keep ${bet}  |  Money: ${money}")
+        update_display(draw_board_string() + f"\n\n★ Push. You keep ${bet}  |  Money: ${money} ★")
         # disable the buttons
     check_game_over()
     disable_buttons()
