@@ -17,6 +17,8 @@ SUR_BTN = "#E59B00"
 DEAL_BTN = "#008153"
 # button actual text - white
 BTN = "#f5f5f5"
+# credits - teal
+CRED = "#85B4B4"
 
 
 # window set up
@@ -295,11 +297,11 @@ button_frame = tk.Frame(window, bg=BKG)
 # pack frame into block
 button_frame.pack()
 # hit button 
-hit_button = tk.Button(button_frame, text="Hit", width=10, bg=HIT_BTN, fg=TEXT, command=hit)
+hit_button = tk.Button(button_frame, text="Hit", width=10, bg=HIT_BTN, fg=TEXT, command=hit, relief="raised", bd=3)
 # stand button
-stand_button = tk.Button(button_frame, text="Stand", width=10, bg=STAND_BTN, fg=TEXT, command=stand)
+stand_button = tk.Button(button_frame, text="Stand", width=10, bg=STAND_BTN, fg=TEXT, command=stand, relief="raised", bd=3)
 # surrender button
-surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg=SUR_BTN, fg="black", command=surrender)
+surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg=SUR_BTN, fg="black", command=surrender, relief="raised", bd=3)
 # all buttons will be their own frame with white text gray bg 
 # use grid format to format them
 hit_button.grid(row=0, column=0, padx=5)
@@ -313,19 +315,19 @@ bet_frame = tk.Frame(window, bg=BKG)
 bet_frame.pack()
 
 # bet label black bg green fg courier font 
-bet_label = tk.Label(bet_frame, text="Bet: $", bg=BKG, fg=TEXT, font=("Courier", 12))
+bet_label = tk.Label(bet_frame, text="Bet: $", bg=BKG, fg=BTN, font=("Courier", 12))
 # it jsuts says "bet", nothing else
 # 0,0
 bet_label.grid(row=0, column=0)
 
 # bet input same stats kinda
-bet_input = tk.Entry(bet_frame, width=10, bg="gray", fg=TEXT, font=("Courier", 12))
+bet_input = tk.Entry(bet_frame, width=10, bg="gray", fg=BTN, font=("Courier", 12))
 # one column down, padx5
 bet_input.grid(row=0, column=1, padx=5)
 # can take the code with bet_input.get()
 
 # deal button some stats
-deal_button = tk.Button(bet_frame, text="Deal", width=10, bg=DEAL_BTN, fg=TEXT, command=place_bet)
+deal_button = tk.Button(bet_frame, text="Deal", width=10, bg=DEAL_BTN, fg=TEXT, command=place_bet, relief="raised", bd=3)
 # column 2 padx 5
 deal_button.grid(row=0, column=2, padx=5)
 
@@ -337,10 +339,12 @@ title_frame.place(relx=0, rely=0, relwidth=1, relheight=1)
 
 # give it a title
 tk.Label(title_frame, text="♠ ♥ Vegas Strip Blackjack ♦ ♣",
-         bg=BKG, fg=TEXT, font=("Courier", 24, "bold")).pack(pady=150)
+         bg=BKG, fg=TEXT, font=("Courier", 24, "bold")).pack(pady=85)
 # give it a label under it
 tk.Label(title_frame, text="Starting money: $500  |  Get to $1500 to win.", 
-         bg=BKG, fg=TEXT, font=("Courier", 12)).pack()
+         bg=BKG, fg=TEXT, font=("Courier", 12)).pack(pady=20)
+tk.Label(title_frame, text="Created by: Zach McKee  |  ANGM2305 Final Project", 
+         bg=BKG, fg=CRED, font=("Courier", 12)).pack(pady=20)
 # give it a button that when clicked deletes the frame
 tk.Button(title_frame, text="Start Game", width=15, bg=DEAL_BTN, fg=TEXT,
           font=("Courier", 12), command=start_game).pack(pady=20)
