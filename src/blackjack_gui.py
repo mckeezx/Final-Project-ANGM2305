@@ -120,6 +120,7 @@ def new_round():
         update_display(draw_board_string() + message)
         check_game_over()
         disable_buttons()
+        window.after(4000, reset)
 
 def place_bet():
     """
