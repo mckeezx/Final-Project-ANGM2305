@@ -21,6 +21,14 @@ money = 500
 # bet curerntly at 0
 bet = 0
 
+def start_game():
+    """
+    Starts the game by destroying the title frame.
+    """
+    title_frame.destroy()
+
+
+
 # title frame, black bg
 title_frame = tk.Frame(window, bg="black")
 title_frame =(relx=0, rely=0, relwidth=1, relheight=1)
