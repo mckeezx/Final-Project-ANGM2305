@@ -4,12 +4,19 @@ from project import create_deck, deal_card, calc_score, check_blackjack, compare
 
 # COLOR TIME
 # Background - Casino table green
+BKG = "#35654d"
 # text - gold
+TEXT = "#EFBF04"
 # hit - crimson red
+HIT_BTN = "#7C292A"
 # blue - dark blue
+STAND_BTN = "#380474"
 # surrender - dark yellow
+SUR_BTN = "#E59B00"
 # deal - dark green
+DEAL_BTN = "#008153"
 # other buttons - white
+BTN = "#f5f5f5"
 
 
 # window set up
