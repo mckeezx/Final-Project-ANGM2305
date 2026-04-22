@@ -40,10 +40,12 @@ def update_display(text):
     #set display state to disabled
     display.config(state="disabled")
 
-def draw_board_string():
+def draw_board_string(hide_dealer=False):
     """
     Render cards, show player/dealer hand, show money, your bet, score
-        
+
+    Input:    
+    - See if dealer's card is hidden or not
     Output:
     - Render stuff to window
     """
@@ -80,30 +82,6 @@ def new_round():
 
     draw_board()
 
-
-# bet input time
-# black bg frame
-bet_frame = tk.Frame(window, bg="black")
-# pack it
-bet_frame.pack()
-
-# bet label black bg green fg courier font 
-bet_label = tk.Label(bet_frame, text="Bet: $", bg="black", fg="green", font=("Courier", 12))
-# it jsuts says "bet", nothing else
-# 0,0
-bet_label.grid(row=0, column=0)
-
-# bet input same stats kinda
-bet_input = tk.Entry(bet_frame, width=10, bg="gray", fg="white", font=("Courier", 12))
-# one column down, padx5
-bet_input.grid(row=0, column=1, padx=5)
-# can take the code with bet_input.get()
-
-# deal button some stats
-deal_button = tk.Button(bet_frame, text="Deal", width=10, bg="gray", fg="white", command=place_bet)
-# column 2 padx 5
-deal_button.grid(row=0, column=2, padx=5)
-
 def place_bet():
     """
     Tries to take what player typed and read it as an integer.
@@ -113,13 +91,13 @@ def place_bet():
     """
     global bet
     try:
-        bet = int(bet_entry.get())
+        bet = int(bet_input.get())
         if bet < 15:
             update_display("Minimum bet is $15.")
-        elif bet < 100:
-            update_display("Minimum bet is $100.")
+        elif bet > 100:
+            update_display("Maximum bet is $100.")
         elif bet > money:
-            update_display("You only have ${money}.")
+            update_display(f"You only have ${money}.")
         else:
             new_round()
             enable_buttons()
@@ -246,6 +224,29 @@ surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg="gray"
 hit_button.grid(row=0, column=0, padx=5)
 stand_button.grid(row=0, column=1, padx=5)
 surrender_button.grid(row=0, column=2, padx=5)
+
+# bet input time
+# black bg frame
+bet_frame = tk.Frame(window, bg="black")
+# pack it
+bet_frame.pack()
+
+# bet label black bg green fg courier font 
+bet_label = tk.Label(bet_frame, text="Bet: $", bg="black", fg="green", font=("Courier", 12))
+# it jsuts says "bet", nothing else
+# 0,0
+bet_label.grid(row=0, column=0)
+
+# bet input same stats kinda
+bet_input = tk.Entry(bet_frame, width=10, bg="gray", fg="white", font=("Courier", 12))
+# one column down, padx5
+bet_input.grid(row=0, column=1, padx=5)
+# can take the code with bet_input.get()
+
+# deal button some stats
+deal_button = tk.Button(bet_frame, text="Deal", width=10, bg="gray", fg="white", command=place_bet)
+# column 2 padx 5
+deal_button.grid(row=0, column=2, padx=5)
 
 
 
