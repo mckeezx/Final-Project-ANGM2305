@@ -164,7 +164,6 @@ def hit():
     """
     global player_hand
     player_hand.append(deal_card(deck))
-    draw_board()
 
     # bust checking
     # calc score > 21
