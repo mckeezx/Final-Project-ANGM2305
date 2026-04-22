@@ -101,7 +101,7 @@ def draw_board():
 
 def new_round():
     """
-    Plays a new round of blackjack.
+    Plays a new round of blackjack by dealing cards to hands
     
     
     """
@@ -203,8 +203,8 @@ def surrender():
     """
     global money, bet
     if len(player_hand) > 2:
-        msg0 = "\nCan only surrender on first turn."
-        update_display(draw_board_string(hide_dealer=True) + msg0)
+        msg = "\nCan only surrender on first turn."
+        update_display(draw_board_string(hide_dealer=True) + msg)
         return
     money -= bet // 2
     update_display(f"You surrendered. You keep ${bet // 2}.\nMoney: ${money}")
@@ -228,17 +228,17 @@ def stand():
     
     if result == "win":
         money += bet
-        msg1 = f"\n\n★ You win! +${bet}  |  Money: ${money} ★"
-        update_display(draw_board_string() + msg1)
+        msg = f"\n\n★ You win! +${bet}  |  Money: ${money} ★"
+        update_display(draw_board_string() + msg)
     elif result == "lose":
         money -= bet
-        msg2 = f"\n\n★ You lose. -${bet}  |  Money: ${money} ★"
-        update_display(draw_board_string() + msg2)
+        msg = f"\n\n★ You lose. -${bet}  |  Money: ${money} ★"
+        update_display(draw_board_string() + msg)
         #lose, lose
         # else it's tie
     else: 
-        msg3 = f"\n\n★ Push. You keep ${bet}  |  Money: ${money} ★"
-        update_display(draw_board_string() + msg3)
+        msg = f"\n\n★ Push. You keep ${bet}  |  Money: ${money} ★"
+        update_display(draw_board_string() + msg)
         # disable the buttons
     check_game_over()
     disable_buttons()
