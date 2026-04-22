@@ -182,8 +182,8 @@ def hit():
         # disable buttons
         check_game_over()
         disable_buttons()
-        # wait 4000 miliseconds, and then execute the function.
-        window.after(4000, reset)
+        # wait 2000 miliseconds, and then execute the function.
+        window.after(2000, reset)
 
     # else if == 21, stand automatically
     elif calc_score(player_hand) == 21:
@@ -299,7 +299,7 @@ hit_button = tk.Button(button_frame, text="Hit", width=10, bg=HIT_BTN, fg=TEXT, 
 # stand button
 stand_button = tk.Button(button_frame, text="Stand", width=10, bg=STAND_BTN, fg=TEXT, command=stand)
 # surrender button
-surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg=SUR_BTN, fg=TEXT, command=surrender)
+surrender_button = tk.Button(button_frame, text="Surrender", width=10, bg=SUR_BTN, fg="black", command=surrender)
 # all buttons will be their own frame with white text gray bg 
 # use grid format to format them
 hit_button.grid(row=0, column=0, padx=5)
