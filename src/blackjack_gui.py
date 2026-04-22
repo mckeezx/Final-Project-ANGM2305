@@ -233,6 +233,7 @@ def stand():
     disable_buttons()
     window.after(4000, reset)
     
+game_over = False
 
 def check_game_over():
     """
@@ -241,6 +242,7 @@ def check_game_over():
     # if money < 0, lose
     # if money > 1500, win
     # else keep playing
+    global game_over
     if money <= 0:
         update_display("Game Over. You're broke.")
         deal_button.config(state="disabled")
