@@ -21,6 +21,15 @@ money = 500
 # bet curerntly at 0
 bet = 0
 
+# title frame, black bg
+# take up 100% of the window
+
+# give it a title
+
+# give it a label
+
+# give it a button
+
 def update_display(text):
     """
     Enables window to be written in, writes text, then disables it again.
