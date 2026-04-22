@@ -313,7 +313,7 @@ title_frame.place(relx=0, rely=0, relwidth=1, relheight=1)
 # take up 100% of the window using relwidth and relheight (percentage based)
 
 # give it a title
-tk.Label(title_frame, text="Vegas Strip Blackjack",
+tk.Label(title_frame, text="♠ ♥ Vegas Strip Blackjack ♦ ♣",
          bg="black", fg="green", font=("Courier", 24, "bold")).pack(pady=150)
 # give it a label under it
 tk.Label(title_frame, text="Starting money: $500  |  Get to $1500 to win.", 
