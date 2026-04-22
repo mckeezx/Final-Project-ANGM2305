@@ -176,7 +176,7 @@ def hit():
     # calc score > 21
     if calc_score(player_hand) > 21:
         # update display saying u bust
-        update_display(draw_board_string() + f"\nYou bust. Round over. -${bet}")
+        update_display(draw_board_string() + f"\n\n★ You bust. Round over. -${bet} ★")
         global money
         money -= bet
         # disable buttons
@@ -278,7 +278,7 @@ display = tk.Text(
     # bkg black
     bg = BKG,
     # fg green
-    fg = TEXT,
+    fg = BTN,
     # courier font
     font = ("Courier", 12),
     # disabled state so no typing
