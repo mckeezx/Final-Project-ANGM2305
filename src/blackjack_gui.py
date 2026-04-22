@@ -79,17 +79,6 @@ def draw_board_string(hide_dealer=False):
 def draw_board():
     update_display(draw_board_string(hide_dealer=True))
 
-def reset():
-    """
-    Reset for next round.
-    """
-    # delete input in bet
-    bet_input.delete(0, "end")
-    # tell player to bet again
-    update_display("Place your bet and click Deal to play.")
-    # make deal button clickable
-    deal_button.config(state="normal")
-
 def new_round():
     """
     Plays a new round of blackjack.
@@ -252,6 +241,19 @@ def check_game_over():
         deal_button.config(state="disabled")
         return True
     return False
+
+def reset():
+    """
+    Reset for next round.
+    """
+    # delete input in bet
+    if game_over:
+        return
+    bet_input.delete(0, "end")
+    # tell player to bet again
+    update_display("Place your bet and click Deal to play.")
+    # make deal button clickable
+    deal_button.config(state="normal")
 
 
 #display set up 
