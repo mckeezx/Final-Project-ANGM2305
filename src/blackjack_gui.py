@@ -255,10 +255,12 @@ def check_game_over():
     # else keep playing
     global game_over
     if money <= 0:
+        game_over = True
         update_display("Game Over. You're broke.")
         deal_button.config(state="disabled")
         return True
     elif money >= 1500:
+        game_over = True
         update_display(f"You win! You reached ${money}.")
         deal_button.config(state="disabled")
         return True
