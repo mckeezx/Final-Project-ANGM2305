@@ -88,6 +88,7 @@ def new_round():
         money += money_gotten
         message = f"\nBlackjack! you win ${money_gotten}!  | Money: ${money}"
         update_display(draw_board_string() + message)
+        check_game_over()
         disable_buttons()
 
 def place_bet():
@@ -148,10 +149,11 @@ def hit():
     # calc score > 21
     if calc_score(player_hand) > 21:
         # update display saying u bust
-        update_display(draw_board_string() + f"\nYou bust! Round over. -${bet}")
+        update_display(draw_board_string() + f"\nYou bust. Round over. -${bet}")
         global money
         money -= bet
         # disable buttons
+        check_game_over()
         disable_buttons()
 
     # else if == 21, stand automatically
@@ -185,16 +187,27 @@ def stand():
     # while dealer is less than 17, draw card
     while calc_score(dealer_hand) < 17:
         dealer_hand.append(deal_card(deck))
+        check_game_over
+        
 
     draw_board()
 
-    def check_game_over():
-        """
-        check if there's a game over.
-        """
-        # if money < 0, lose
-        # if money > 1500, win
-        # else keep playing
+def check_game_over():
+    """
+    check if there's a game over.
+    """
+    # if money < 0, lose
+    # if money > 1500, win
+    # else keep playing
+    if money <= 0:
+        update_display("Game Over. You're broke.")
+        deal_button.config(state="disabled")
+        return True
+    elif money >= 1500:
+        update_display(f"You win! You reached ${money}.")
+        deal_button.config(state="disabled")
+        return True
+    return False
 
     # compare hands 
     result = compare_hands(player_hand, dealer_hand)
