@@ -148,7 +148,9 @@ def hit():
     # calc score > 21
     if calc_score(player_hand) > 21:
         # update display saying u bust
-        update_display("You bust! Round over.")
+        update_display(draw_board_string() + f"\nYou bust! Round over.  -${bet}")
+        global money
+        money -= bet
         # disable buttons
         disable_buttons()
 
@@ -157,6 +159,8 @@ def hit():
         update_display("21! Standing Automatically.")
         # disable buttons
         disable_buttons()
+    else:
+        draw_board()
 
 def surrender():
     """
